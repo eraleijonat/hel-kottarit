@@ -1,8 +1,12 @@
+<script>
+	import { base } from '$app/paths';
+</script>
+
 <footer>
 	<div class="logos">
-		<img src="/sp.png" alt="suomen partiolaiset" />
-		<img src="/wagggs.png" alt="suomen partiolaiset" />
-		<img src="/wosm.png" alt="suomen partiolaiset" />
+		<img src="{base}/sp.png" alt="suomen partiolaiset" />
+		<img src="{base}/wagggs.png" alt="suomen partiolaiset" />
+		<img src="{base}/wosm.png" alt="suomen partiolaiset" />
 	</div>
 	<p>Helsingin Erä-Leijonat ry (1084910-4)</p>
 </footer>

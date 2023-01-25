@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 
 	$: path = $page.url.pathname;
@@ -6,12 +7,12 @@
 
 <nav>
 	<div>
-		<a href="/" class="name">Helsingin Erä-Leijonat</a>
+		<a href="{base}/" class="name">Helsingin Erä-Leijonat</a>
 	</div>
 	<div class="links">
-		<a class:active={path === '/johtajille'} href="/johtajille">Johtajille</a>
-		<a class:active={path === '/lippukunta'} href="/lippukunta">Lippukunta</a>
-		<a class:active={path === '/yhteystiedot'} href="/yhteystiedot">Yhteystiedot</a>
+		<a class:active={path === '/johtajille'} href="{base}/johtajille">Johtajille</a>
+		<a class:active={path === '/lippukunta'} href="{base}/lippukunta">Lippukunta</a>
+		<a class:active={path === '/yhteystiedot'} href="{base}/yhteystiedot">Yhteystiedot</a>
 	</div>
 </nav>
 
