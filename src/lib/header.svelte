@@ -20,6 +20,13 @@
 
 <nav>
 	<div class="name" on:click={() => goto('/')} on:keypress={() => goto('/')}>
+		<img
+			width="64px"
+			height="64px"
+			class="logo"
+			src={`${base}/logo/hel-logo-single-color.svg`}
+			alt="hel logo"
+		/>
 		<a href="{base}/">Helsingin Erä&#8209;Leijonat</a>
 	</div>
 	<div class="links">
@@ -86,10 +93,13 @@
 		display: flex;
 		align-items: stretch;
 		justify-content: space-between;
-		gap: 32px;
+		gap: 16px;
 		background-color: variables.$green-light;
 		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
 
+		@media (min-width: variables.$sm) {
+			gap: 32px;
+		}
 		@media (min-width: variables.$xl) {
 			padding: 0 80px;
 		}
@@ -192,6 +202,7 @@
 		display: flex;
 		align-items: center;
 		padding: 16px 32px;
+		gap: 16px;
 		cursor: pointer;
 
 		&:hover {
@@ -201,7 +212,7 @@
 		}
 
 		a {
-			color: #eee;
+			color: variables.$text-lighter;
 			font-size: 22px;
 			text-decoration: none;
 			transition: color 0.2s;
@@ -209,6 +220,14 @@
 			@media (min-width: variables.$lg) {
 				font-size: 26px;
 			}
+		}
+	}
+
+	.logo {
+		display: none;
+		fill: variables.$text-light;
+		@media (min-width: variables.$sm) {
+			display: initial;
 		}
 	}
 </style>
