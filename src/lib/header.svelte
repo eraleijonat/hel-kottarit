@@ -46,6 +46,7 @@
 		>
 			<img
 				width="32px"
+				height="32px"
 				class="menuIcon"
 				src={`${base}/icons/${menuOpen ? 'close' : 'menu'}.svg`}
 				alt={menuOpen ? 'Close menu' : 'Open menu'}
@@ -115,6 +116,7 @@
 		box-shadow: none;
 		border-radius: 0px;
 		padding: 20px;
+		max-height: 72px;
 		&:hover {
 			background-color: lighten(variables.$green-light, 3%);
 			border-style: none;

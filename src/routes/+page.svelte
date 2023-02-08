@@ -3,10 +3,18 @@
 	import { BUILDER_PUBLIC_API_KEY } from '../lib/builderKey';
 
 	export let data;
+	let heroHeight: number | undefined;
 </script>
 
+<svelte:window bind:innerHeight={heroHeight} />
+
 <div class="heroWrapper">
-	<div class="hero" style={`background-image: url(${data.content.data.heroImage});`}>
+	<div
+		class="hero"
+		style={`background-image: url(${data.content.data.heroImage}); ${
+			heroHeight ? `height: ${heroHeight - 72}px;` : ''
+		}`}
+	>
 		<h1 class="heroTitle">{data.content.data.heroTitle}</h1>
 		<p class="heroText">{data.content.data.heroText}</p>
 	</div>
@@ -23,7 +31,7 @@
 		background: rgba(29, 29, 29, 1);
 	}
 	.hero {
-		height: 400px;
+		height: 600px;
 		padding: 80px 20px 40px;
 
 		background-size: cover;
