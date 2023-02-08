@@ -9,7 +9,7 @@ export async function load(event) {
 		apiKey: BUILDER_PUBLIC_API_KEY,
 		options: undefined,
 		userAttributes: {
-			urlPath: event.url.pathname || '/yhteystiedot'
+			urlPath: event.url.pathname || ''
 		}
 	});
 

@@ -12,6 +12,8 @@
 </body>
 
 <style lang="scss">
+	@use '../src/style/_variables.scss';
+
 	body {
 		font-family: 'Poppins', sans-serif;
 		margin: 0;
@@ -20,6 +22,7 @@
 		align-items: stretch;
 	}
 	main {
+		margin-top: variables.$header-offset;
 		flex: 1;
 		display: flex;
 		flex-direction: column;

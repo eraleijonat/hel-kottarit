@@ -12,16 +12,25 @@
 </footer>
 
 <style lang="scss">
+	@use '../src/style/_variables.scss';
+
 	footer {
-		width: 100%;
+		left: 0px;
+		right: 0px;
 		bottom: 0;
-		min-height: 160px;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		justify-content: space-evenly;
+		justify-content: space-between;
 		gap: 32px;
-		background-color: #082e2a;
+		padding: 42px;
+		background-color: variables.$green-dark;
 		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+		@media (min-width: variables.$md) {
+			flex-direction: row;
+			justify-content: space-evenly;
+		}
 	}
 	.logos {
 		display: flex;
