@@ -19,11 +19,11 @@
 		right: 0px;
 		bottom: 0;
 		display: flex;
-		flex-direction: column;
+		flex-direction: column-reverse;
 		align-items: center;
 		justify-content: space-between;
 		gap: 32px;
-		padding: 42px;
+		padding: 32px;
 		background-color: variables.$green-dark;
 		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 
