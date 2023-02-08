@@ -47,7 +47,7 @@
 			<img
 				width="32px"
 				class="menuIcon"
-				src={`${base}../icons/${menuOpen ? 'close' : 'menu'}.svg`}
+				src={`${base}/icons/${menuOpen ? 'close' : 'menu'}.svg`}
 				alt={menuOpen ? 'Close menu' : 'Open menu'}
 			/>
 		</button>
