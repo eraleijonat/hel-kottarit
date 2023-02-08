@@ -159,6 +159,10 @@
 
 		@media (min-width: variables.$lg) {
 			padding: 0 32px;
+
+			a {
+				color: #fff !important;
+			}
 		}
 
 		&:hover {

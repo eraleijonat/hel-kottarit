@@ -50,7 +50,7 @@
 		justify-content: center;
 
 		@media (min-width: variables.$sm) {
-			height: 700px;
+			height: 900px;
 			padding: 0px;
 		}
 	}
