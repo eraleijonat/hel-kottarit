@@ -32,7 +32,7 @@
 	}
 	.hero {
 		height: 600px;
-		padding: 80px 20px 40px;
+		padding: 0 20px;
 
 		background-size: cover;
 		-webkit-mask-image: linear-gradient(
