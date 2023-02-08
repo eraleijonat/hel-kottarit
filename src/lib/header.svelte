@@ -9,7 +9,9 @@
 	const links = [
 		{ name: 'Etusivu', path: '/' },
 		{ name: 'Lippukunta', path: '/lippukunta' },
+		{ name: 'Ryhmät ja tapahtumat', path: '/aikataulu' },
 		{ name: 'Yhteystiedot', path: '/johtajille' },
+		{ name: 'Huoltajille', path: '/huoltajille' },
 		{ name: 'Johtajille', path: '/yhteystiedot' }
 	];
 
