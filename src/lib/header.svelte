@@ -21,7 +21,7 @@
 </script>
 
 <nav>
-	<div class="name" on:click={() => goto('/')} on:keypress={() => goto('/')}>
+	<div class="name" on:click={() => goto(`${base}/`)} on:keypress={() => goto(`${base}/`)}>
 		<img
 			width="64px"
 			height="64px"
@@ -36,8 +36,8 @@
 			<div
 				class:active={path === link.path}
 				class="link"
-				on:click={() => goto(link.path)}
-				on:keypress={() => goto(link.path)}
+				on:click={() => goto(`${base}${link.path}`)}
+				on:keypress={() => goto(`${base}${link.path}`)}
 			>
 				<a class="linkText" href="{base}{link.path}">{link.name}</a>
 			</div>
@@ -68,11 +68,11 @@
 					class="menuLink"
 					on:click={() => {
 						menuOpen = false;
-						goto(link.path);
+						goto(`${base}${link.path}`);
 					}}
 					on:keypress={() => {
 						menuOpen = false;
-						goto(link.path);
+						goto(`${base}${link.path}`);
 					}}
 				>
 					<a class="linkText" href="{base}{link.path}">{link.name}</a>
