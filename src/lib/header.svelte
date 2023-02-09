@@ -109,7 +109,7 @@
 	.links {
 		display: none;
 
-		@media (min-width: variables.$md) {
+		@media (min-width: variables.$xl) {
 			display: flex;
 		}
 	}
@@ -118,7 +118,7 @@
 		display: flex;
 		align-items: center;
 		border-image-width: 0px;
-		@media (min-width: variables.$md) {
+		@media (min-width: variables.$xl) {
 			display: none;
 		}
 	}
