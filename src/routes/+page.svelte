@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { CUSTOM_COMPONENTS } from '$lib/customComponents';
 	import InstagramFeed from '$lib/instagramFeed.svelte';
 	import { RenderContent } from '@builder.io/sdk-svelte';
 	import { BUILDER_PUBLIC_API_KEY } from '../lib/builderKey';
@@ -22,7 +23,12 @@
 </div>
 <div class="content">
 	<div class="section">
-		<RenderContent model="page" content={data.content} apiKey={BUILDER_PUBLIC_API_KEY} />
+		<RenderContent
+			model="page"
+			content={data.content}
+			apiKey={BUILDER_PUBLIC_API_KEY}
+			customComponents={CUSTOM_COMPONENTS}
+		/>
 		<InstagramFeed />
 	</div>
 </div>
@@ -97,6 +103,7 @@
 
 	.section {
 		padding: 80px 20px;
+		max-width: 90%;
 
 		@media (min-width: variables.$sm) {
 			padding: 80px 32px;

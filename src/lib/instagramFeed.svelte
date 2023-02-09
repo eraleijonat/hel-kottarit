@@ -50,11 +50,16 @@
 	.post {
 		display: none;
 		flex-direction: column;
+		align-items: stretch;
 		padding: 8px;
 		gap: 16px;
+		@media (min-width: variables.$md) {
+			flex-direction: row;
+		}
 
 		@media (min-width: variables.$lg) {
 			display: flex;
+			flex-direction: column;
 		}
 
 		&:nth-child(-n + 6) {
@@ -67,7 +72,11 @@
 		}
 	}
 	.pic {
-		width: 300px;
+		width: 100%;
+
+		@media (min-width: variables.$md) {
+			width: 300px;
+		}
 
 		@media (min-width: variables.$lg) {
 			height: 375px;
