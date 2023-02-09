@@ -58,7 +58,7 @@
 			transparent
 		);
 
-		background-position: 65%;
+		background-position: 20%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
