@@ -1,4 +1,5 @@
 <script lang="ts">
+	import InstagramFeed from '$lib/instagramFeed.svelte';
 	import { RenderContent } from '@builder.io/sdk-svelte';
 	import { BUILDER_PUBLIC_API_KEY } from '../lib/builderKey';
 
@@ -22,6 +23,7 @@
 <div class="content">
 	<div class="section">
 		<RenderContent model="page" content={data.content} apiKey={BUILDER_PUBLIC_API_KEY} />
+		<InstagramFeed />
 	</div>
 </div>
 
@@ -100,7 +102,7 @@
 			padding: 80px 32px;
 		}
 		@media (min-width: variables.$xl) {
-			max-width: 60%;
+			max-width: 80%;
 		}
 	}
 	* {
