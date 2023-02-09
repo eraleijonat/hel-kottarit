@@ -43,6 +43,13 @@
 		padding: 0 20px;
 
 		background-size: cover;
+		mask-image: linear-gradient(
+			to bottom,
+			#fff 0px,
+			#fff 85%,
+			rgba(255, 255, 255, 0.2) 92%,
+			transparent
+		);
 		-webkit-mask-image: linear-gradient(
 			to bottom,
 			#fff 0px,

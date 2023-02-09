@@ -1,10 +1,17 @@
 <script>
+	import { goto } from '$app/navigation';
 	import { base } from '$app/paths';
 </script>
 
 <footer>
 	<div class="logos">
-		<img src="{base}/sp.png" alt="suomen partiolaiset" />
+		<img
+			class="sp"
+			src="{base}/sp.png"
+			alt="suomen partiolaiset"
+			on:click={() => goto('https://www.partio.fi/')}
+			on:keypress={() => goto('https://www.partio.fi/')}
+		/>
 		<img src="{base}/wagggs.png" alt="suomen partiolaiset" />
 		<img src="{base}/wosm.png" alt="suomen partiolaiset" />
 	</div>
@@ -35,6 +42,9 @@
 	.logos {
 		display: flex;
 		gap: 32px;
+	}
+	.sp {
+		cursor: pointer;
 	}
 	img {
 		height: 50px;
