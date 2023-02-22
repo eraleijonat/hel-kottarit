@@ -55,7 +55,6 @@
 				}
 			]}
 		/>
-		<InstagramFeed />
 	</div>
 </div>
 
