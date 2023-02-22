@@ -9,7 +9,7 @@
 	let heroHeight: number | undefined;
 </script>
 
-<Head image={data.content.data.heroImage} />
+<Head image={`${data.content.data.heroImage}?width=1200`} />
 
 <div class="heroWrapper">
 	<div
