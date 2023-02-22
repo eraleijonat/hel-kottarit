@@ -3,12 +3,13 @@
 	import InstagramFeed from '$lib/instagramFeed.svelte';
 	import { RenderContent } from '@builder.io/sdk-svelte';
 	import { BUILDER_PUBLIC_API_KEY } from '../lib/builderKey';
+	import Head from '../lib/head.svelte';
 
 	export let data;
 	let heroHeight: number | undefined;
 </script>
 
-<svelte:window bind:innerHeight={heroHeight} />
+<Head image={data.content.data.heroImage} />
 
 <div class="heroWrapper">
 	<div
