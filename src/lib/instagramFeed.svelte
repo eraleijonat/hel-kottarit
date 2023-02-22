@@ -7,7 +7,6 @@
 			`https://cdn.builder.io/api/v1/instagram/media?apiKey=${BUILDER_PUBLIC_API_KEY}`
 		);
 		const data = await res.json();
-		console.log('data', data);
 		const posts = data.data;
 		return { posts };
 	}
