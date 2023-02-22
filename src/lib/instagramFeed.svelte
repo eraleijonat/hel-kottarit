@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { BUILDER_PUBLIC_API_KEY } from './builderKey';
+	import { BUILDER_PUBLIC_API_KEY } from './renderContent';
 
 	export async function load() {
 		const res = await fetch(
@@ -55,10 +55,7 @@
 				to left,
 				transparent,
 				rgba(255, 255, 255, 0.5) 2%,
-				#fff 4%,
-				#fff 67%,
-				rgba(255, 255, 255, 0.5) 96%,
-				transparent
+				#fff 4%
 			);
 		}
 	}
@@ -68,7 +65,7 @@
 		align-items: stretch;
 		padding: 8px;
 		gap: 16px;
-		scroll-snap-align: center;
+		scroll-snap-align: start;
 
 		@media (min-width: variables.$md) {
 			flex-direction: row;
@@ -77,10 +74,6 @@
 		@media (min-width: variables.$lg) {
 			display: flex;
 			flex-direction: column;
-
-			&:first-child {
-				padding-left: 40px;
-			}
 			&:last-child {
 				padding-right: 40px;
 			}

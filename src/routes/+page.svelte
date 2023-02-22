@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { CUSTOM_COMPONENTS } from '$lib/customComponents';
 	import InstagramFeed from '$lib/instagramFeed.svelte';
 	import { RenderContent } from '@builder.io/sdk-svelte';
-	import { BUILDER_PUBLIC_API_KEY } from '../lib/builderKey';
+	import { BUILDER_PUBLIC_API_KEY, CUSTOM_COMPONENTS } from '../lib/renderContent';
 	import Head from '../lib/head.svelte';
 
 	export let data;
@@ -37,7 +36,7 @@
 <style lang="scss">
 	@use '../src/style/_variables.scss';
 	.heroWrapper {
-		background: rgba(29, 29, 29, 1);
+		background: rgba(18, 18, 18, 1);
 	}
 	.hero {
 		height: 600px;
@@ -103,9 +102,9 @@
 		align-items: center;
 		background: linear-gradient(
 			180deg,
-			rgba(29, 29, 29, 1) 0%,
-			rgba(5, 28, 26, 1) 50%,
-			rgba(29, 29, 29, 1) 100%
+			rgba(18, 18, 18, 1) 0%,
+			rgba(15, 21, 18, 1) 50%,
+			rgba(23, 23, 23, 1) 100%
 		);
 	}
 
