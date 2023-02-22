@@ -1,7 +1,8 @@
 <script lang="ts">
 	import InstagramFeed from '$lib/instagramFeed.svelte';
+	import NavigateButton from '$lib//NavigateButton.svelte';
 	import { RenderContent } from '@builder.io/sdk-svelte';
-	import { BUILDER_PUBLIC_API_KEY, CUSTOM_COMPONENTS } from '../lib/renderContent';
+	import { BUILDER_PUBLIC_API_KEY } from '../lib/renderContent';
 	import Head from '../lib/head.svelte';
 
 	export let data;
@@ -27,7 +28,32 @@
 			model="page"
 			content={data.content}
 			apiKey={BUILDER_PUBLIC_API_KEY}
-			customComponents={CUSTOM_COMPONENTS}
+			customComponents={[
+				{
+					component: NavigateButton,
+					name: 'Navigate button',
+					canHaveChildren: false,
+					builtIn: true,
+					inputs: [
+						{
+							name: 'href',
+							type: 'string',
+							defaultValue: ''
+						},
+						{
+							name: 'text',
+							type: 'string',
+							defaultValue: ''
+						}
+					]
+				},
+				{
+					component: InstagramFeed,
+					name: 'Instagram feed',
+					canHaveChildren: false,
+					builtIn: true
+				}
+			]}
 		/>
 		<InstagramFeed />
 	</div>
