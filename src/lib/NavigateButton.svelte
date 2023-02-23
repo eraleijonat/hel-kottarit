@@ -7,7 +7,7 @@
 </script>
 
 <div
-	class="menuLink"
+	class="navigateButton"
 	on:click={() => {
 		goto(`${base}${href}`);
 	}}
@@ -17,3 +17,34 @@
 >
 	<a class="linkText" href="{base}{href}">{text}</a>
 </div>
+
+<style lang="scss">
+	@use '../src/style/_variables.scss';
+
+	.navigateButton {
+		border: 0;
+		background: none;
+		box-shadow: none;
+		border-radius: 100px;
+		padding: 16px 24px;
+		background-color: variables.$green-light;
+		transition: background-color 0.1s;
+		cursor: pointer;
+
+		&:hover {
+			background-color: lighten(variables.$green-light, 3%);
+			a {
+				color: #fff;
+			}
+		}
+
+		a {
+			color: variables.$text-lighter;
+			font-size: large;
+			font-weight: 500;
+			font-family: variables.$font-primary;
+			text-decoration: none;
+			transition: color 0.1s;
+		}
+	}
+</style>
