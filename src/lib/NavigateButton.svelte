@@ -27,19 +27,19 @@
 		box-shadow: none;
 		border-radius: 100px;
 		padding: 16px 24px;
-		background-color: variables.$green-light;
+		background-color: variables.$main;
 		transition: background-color 0.1s;
 		cursor: pointer;
 
 		&:hover {
-			background-color: lighten(variables.$green-light, 3%);
+			background-color: lighten(variables.$main, 3%);
 			a {
 				color: #fff;
 			}
 		}
 
 		a {
-			color: variables.$text-lighter;
+			color: variables.$text-light;
 			font-size: large;
 			font-weight: 500;
 			font-family: variables.$font-primary;

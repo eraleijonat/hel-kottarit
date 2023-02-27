@@ -96,7 +96,7 @@
 		align-items: stretch;
 		justify-content: space-between;
 		gap: 16px;
-		background-color: variables.$green-light;
+		background-color: variables.$main;
 		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
 
 		@media (min-width: variables.$sm) {
@@ -130,7 +130,7 @@
 		padding: 20px;
 		max-height: 72px;
 		&:hover {
-			background-color: lighten(variables.$green-light, 3%);
+			background-color: lighten(variables.$main, 3%);
 			border-style: none;
 		}
 		&:active {
@@ -150,7 +150,7 @@
 		width: 100%;
 		padding: 16px 0 0 0;
 		z-index: 50;
-		background-color: darken(variables.$green-light, 2%);
+		background-color: darken(variables.$main, 3%);
 		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
 	}
 	.hidden {
@@ -160,7 +160,7 @@
 		padding: 16px 32px;
 		cursor: pointer;
 		&:hover {
-			background-color: lighten(variables.$green-light, 3%);
+			background-color: lighten(variables.$main, 3%);
 		}
 	}
 	.link {
@@ -178,11 +178,11 @@
 		}
 
 		&:hover {
-			background-color: lighten(variables.$green-light, 3%);
+			background-color: lighten(variables.$main, 3%);
 		}
 	}
 	.active {
-		background-color: lighten(variables.$green-light, 2%);
+		background-color: lighten(variables.$main, 3%);
 		a {
 			color: #fff !important;
 		}
@@ -214,7 +214,7 @@
 		}
 
 		a {
-			color: variables.$text-lighter;
+			color: variables.$text-light;
 			font-size: 22px;
 			text-decoration: none;
 			transition: color 0.2s;

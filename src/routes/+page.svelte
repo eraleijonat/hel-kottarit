@@ -1,9 +1,10 @@
 <script lang="ts">
 	import InstagramFeed from '$lib/instagramFeed.svelte';
-	import NavigateButton from '$lib//NavigateButton.svelte';
+	import NavigateButton from '$lib//navigateButton.svelte';
 	import { RenderContent } from '@builder.io/sdk-svelte';
 	import { BUILDER_PUBLIC_API_KEY } from '../lib/renderContent';
 	import Head from '../lib/head.svelte';
+	import Section from '$lib/section.svelte';
 
 	export let data;
 	let heroHeight: number | undefined;
@@ -52,6 +53,19 @@
 					name: 'Instagram feed',
 					canHaveChildren: false,
 					builtIn: true
+				},
+				{
+					component: Section,
+					name: 'Section',
+					canHaveChildren: true,
+					builtIn: true,
+					inputs: [
+						{
+							name: 'variant',
+							type: 'string',
+							enum: ['light', 'dark', 'transparent']
+						}
+					]
 				}
 			]}
 		/>
@@ -131,20 +145,5 @@
 			rgba(15, 21, 18, 1) 50%,
 			rgba(23, 23, 23, 1) 100%
 		);
-	}
-
-	.section {
-		padding: 80px 20px;
-		max-width: 90%;
-
-		@media (min-width: variables.$sm) {
-			padding: 80px 32px;
-		}
-		@media (min-width: variables.$xl) {
-			max-width: 80%;
-		}
-	}
-	* {
-		color: variables.$text-light;
 	}
 </style>
