@@ -1,6 +1,6 @@
 <script lang="ts">
 	import InstagramFeed from '$lib/instagramFeed.svelte';
-	import NavigateButton from '$lib//navigateButton.svelte';
+	import NavigateButton from '$lib//NavigateButton.svelte';
 	import { RenderContent } from '@builder.io/sdk-svelte';
 	import { BUILDER_PUBLIC_API_KEY } from '../lib/renderContent';
 	import Head from '../lib/head.svelte';
