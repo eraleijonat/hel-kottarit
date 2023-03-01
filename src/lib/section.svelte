@@ -9,7 +9,6 @@
 	class:sectionDark={variant === 'dark'}
 >
 	<div
-		class="gutter"
 		class:gutterWide={width == 'wide'}
 		class:gutterNarrow={width == 'narrow'}
 		class:gutterFull={width == 'full' || width == undefined}
@@ -21,9 +20,6 @@
 <style lang="scss">
 	@use '../src/style/_variables.scss';
 
-	.gutter {
-		padding: 64px 20px;
-	}
 	.gutterNarrow {
 		@media (min-width: variables.$md) {
 			max-width: variables.$md;
@@ -44,6 +40,7 @@
 		display: flex;
 		justify-content: center;
 		max-width: 100%;
+		padding: 64px 20px;
 	}
 	.sectionLight {
 		background-color: variables.$main-light;

@@ -62,12 +62,14 @@
 					{
 						name: 'variant',
 						type: 'string',
-						enum: ['light', 'dark', 'transparent']
+						enum: ['light', 'dark', 'transparent'],
+						defaultValue: 'transparent'
 					},
 					{
 						name: 'width',
 						type: 'string',
-						enum: ['narrow', 'wide', 'full']
+						enum: ['narrow', 'wide', 'full'],
+						defaultValue: 'narrow'
 					}
 				]
 			}
