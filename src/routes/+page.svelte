@@ -71,7 +71,8 @@
 				inputs: [
 					{ name: 'day', type: 'string', enum: columns },
 					{ name: 'start', type: 'string', enum: rows },
-					{ name: 'end', type: 'string', enum: rows }
+					{ name: 'end', type: 'string', enum: rows },
+					{ name: 'text', type: 'string' }
 				]
 			},
 			{

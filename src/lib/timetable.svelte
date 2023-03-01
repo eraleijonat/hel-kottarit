@@ -13,6 +13,7 @@
 			<p class="headerText">{row}</p>
 		</div>
 	{/each}
+	<slot />
 </div>
 
 <style lang="scss">

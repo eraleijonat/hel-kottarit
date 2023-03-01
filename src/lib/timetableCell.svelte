@@ -7,6 +7,8 @@
 
 	const dayToColumn = () => day !== undefined && columns.indexOf(day) + 1;
 	const timeToRow = (t: string | undefined) => t !== undefined && rows.indexOf(t) + 1;
+
+	console.log({ day, start, end });
 </script>
 
 {#if dayToColumn() > 0 && timeToRow(start) !== undefined && timeToRow(end)}
