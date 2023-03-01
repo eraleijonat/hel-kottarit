@@ -5,12 +5,12 @@
 <div class="container">
 	<div class="timeTable">
 		{#each columns as column, i}
-			<div class="headerCell" style={`grid-area: 1/${i + 2}`}>
+			<div class="headerCell" style={`grid-column: ${i * 2 + 2} / ${i * 2 + 4}`}>
 				<p>{column}</p>
 			</div>
 		{/each}
 		{#each rows as row, i}
-			<div class="headerCell" style={`grid-area: ${i + 2}/1`}>
+			<div class="headerCell" style={`grid-area: ${i * 2 + 2}/1`}>
 				<p class="headerText">{row}</p>
 			</div>
 		{/each}
@@ -26,7 +26,7 @@
 	}
 	.timeTable {
 		display: grid;
-		grid-template-columns: auto repeat(5, 1fr);
+		grid-template-columns: auto repeat(10, 1fr);
 		grid-template-rows: auto;
 		row-gap: 8px;
 		column-gap: 8px;

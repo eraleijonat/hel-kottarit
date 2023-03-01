@@ -7,7 +7,10 @@
 	export let ageGroup: string | undefined;
 	export let split: string | undefined;
 
-	const dayColumn = day !== undefined && columns.indexOf(day) + 2;
+	const column =
+		day !== undefined && columns.indexOf(day) > 0 ? columns.indexOf(day) * 2 + 2 : undefined;
+	const startOffset = split === 'right' ? 1 : 0;
+	const endOffset = split === 'left' ? 1 : 2;
 	const startRow = start && rows.indexOf(start) + 2;
 	const endRow = end && rows.indexOf(end) + 3;
 	const ageGroupData = ageGroups.find((a) => a.name === ageGroup);
@@ -16,17 +19,15 @@
 		ages: '-',
 		name: 'Muu toiminta'
 	};
-	console.log(ageGroup);
 </script>
 
-{#if dayColumn > 0 && startRow && endRow}
+{#if column && startRow && endRow}
 	<div
 		class="cell"
-		class:cellLeft={split == 'left'}
-		class:cellRight={split == 'right'}
-		style={`grid-column: ${dayColumn}; grid-row: ${startRow} / ${endRow}; background-color: ${
-			ageGroupData !== undefined ? ageGroupData.colors : defaultAgeGroupData.colors
-		};`}
+		style={`
+		grid-column: ${column + startOffset} / ${column + endOffset};
+		grid-row: ${startRow} / ${endRow};
+		background-color: ${ageGroupData !== undefined ? ageGroupData.colors : defaultAgeGroupData.colors}`}
 	>
 		<p class="cellText">{text}</p>
 	</div>
@@ -37,19 +38,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 8px;
+
 		border-radius: 4px;
 		text-align: center;
 	}
-	.cellLeft {
-		align-self: flex-start;
-		max-width: 50%;
-	}
-	.cellRight {
-		align-self: flex-end;
-		max-width: 50%;
-	}
 	.cellText {
+		padding: 12px 8px;
 		margin: 0px;
 	}
 </style>
