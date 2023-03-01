@@ -5,6 +5,7 @@
 	import { BUILDER_PUBLIC_API_KEY } from '../lib/renderContent';
 	import Head from '../lib/head.svelte';
 	import Section from '$lib/section.svelte';
+	import Timetable from '$lib/timetable.svelte';
 
 	export let data;
 	let heroHeight: number | undefined;
@@ -50,6 +51,12 @@
 			{
 				component: InstagramFeed,
 				name: 'Instagram feed',
+				canHaveChildren: false,
+				builtIn: true
+			},
+			{
+				component: Timetable,
+				name: 'Timetable',
 				canHaveChildren: false,
 				builtIn: true
 			},

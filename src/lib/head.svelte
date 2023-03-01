@@ -9,6 +9,9 @@
 </script>
 
 <svelte:head>
+	<!-- favicon -->
+	<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+	<link rel="icon" type="image/png" href={`${base}/favicon.png`} />
 	<!-- HTML Meta Tags -->
 	<title>Helsingin Erä-Leijonat</title>
 	<meta name="description" content={description} />
