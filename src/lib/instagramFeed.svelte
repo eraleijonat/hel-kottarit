@@ -14,29 +14,34 @@
 	const postsPromise = load();
 </script>
 
-<div class="posts">
-	{#await postsPromise}
-		<p>...ladataan IG kuvia</p>
-	{:then data}
-		{#each data.posts as post}
-			<div class="post">
-				<img
-					width="300px"
-					class="pic"
-					alt="instagram post"
-					src={post.media_url}
-					on:click={() => goto(post.permalink)}
-					on:keypress={() => goto(post.permalink)}
-				/>
-				<p class="caption">{post.caption}</p>
-			</div>
-		{/each}
-	{/await}
+<div class="container">
+	<div class="posts">
+		{#await postsPromise}
+			<p>...ladataan IG kuvia</p>
+		{:then data}
+			{#each data.posts as post}
+				<div class="post">
+					<img
+						width="300px"
+						class="pic"
+						alt="instagram post"
+						src={post.media_url}
+						on:click={() => goto(post.permalink)}
+						on:keypress={() => goto(post.permalink)}
+					/>
+					<p class="caption">{post.caption}</p>
+				</div>
+			{/each}
+		{/await}
+	</div>
 </div>
 
 <style lang="scss">
 	@use '../src/style/_variables.scss';
-
+	.container {
+		display: flex;
+		max-width: 100%;
+	}
 	.posts {
 		display: flex;
 		flex-direction: column;

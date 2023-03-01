@@ -24,52 +24,50 @@
 	</div>
 </div>
 <div class="content">
-	<div class="section">
-		<RenderContent
-			model="page"
-			content={data.content}
-			apiKey={BUILDER_PUBLIC_API_KEY}
-			customComponents={[
-				{
-					component: NavigateButton,
-					name: 'Navigate button',
-					canHaveChildren: false,
-					builtIn: true,
-					inputs: [
-						{
-							name: 'href',
-							type: 'string',
-							defaultValue: ''
-						},
-						{
-							name: 'text',
-							type: 'string',
-							defaultValue: ''
-						}
-					]
-				},
-				{
-					component: InstagramFeed,
-					name: 'Instagram feed',
-					canHaveChildren: false,
-					builtIn: true
-				},
-				{
-					component: Section,
-					name: 'Section',
-					canHaveChildren: true,
-					builtIn: true,
-					inputs: [
-						{
-							name: 'variant',
-							type: 'string',
-							enum: ['light', 'dark', 'transparent']
-						}
-					]
-				}
-			]}
-		/>
-	</div>
+	<RenderContent
+		model="page"
+		content={data.content}
+		apiKey={BUILDER_PUBLIC_API_KEY}
+		customComponents={[
+			{
+				component: NavigateButton,
+				name: 'Navigate button',
+				canHaveChildren: false,
+				builtIn: true,
+				inputs: [
+					{
+						name: 'href',
+						type: 'string',
+						defaultValue: ''
+					},
+					{
+						name: 'text',
+						type: 'string',
+						defaultValue: ''
+					}
+				]
+			},
+			{
+				component: InstagramFeed,
+				name: 'Instagram feed',
+				canHaveChildren: false,
+				builtIn: true
+			},
+			{
+				component: Section,
+				name: 'Section',
+				canHaveChildren: true,
+				builtIn: true,
+				inputs: [
+					{
+						name: 'variant',
+						type: 'string',
+						enum: ['light', 'dark', 'transparent']
+					}
+				]
+			}
+		]}
+	/>
 </div>
 
 <style lang="scss">
@@ -136,14 +134,12 @@
 		}
 	}
 	.content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
 		background: linear-gradient(
 			180deg,
 			rgba(18, 18, 18, 1) 0%,
 			rgba(15, 21, 18, 1) 50%,
 			rgba(23, 23, 23, 1) 100%
 		);
+		color: variables.$text-light;
 	}
 </style>

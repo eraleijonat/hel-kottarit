@@ -31,7 +31,7 @@
 		justify-content: space-between;
 		gap: 32px;
 		padding: 32px;
-		background-color: variables.$main-dark;
+		background-color: variables.$footer;
 		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 
 		@media (min-width: variables.$md) {

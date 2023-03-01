@@ -27,5 +27,6 @@
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
+		max-width: 100%;
 	}
 </style>
