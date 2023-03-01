@@ -59,7 +59,8 @@
 			{
 				component: Timetable,
 				name: 'Timetable',
-				canHaveChildren: false,
+				canHaveChildren: true,
+
 				builtIn: true
 			},
 			{
