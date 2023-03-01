@@ -41,6 +41,10 @@
 	.container {
 		display: flex;
 		max-width: 100%;
+		max-height: 500px;
+		@media (min-width: variables.$md) {
+			max-height: unset;
+		}
 	}
 	.posts {
 		display: flex;
