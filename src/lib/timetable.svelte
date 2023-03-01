@@ -10,7 +10,7 @@
 	{/each}
 	{#each rows as row, i}
 		<div class="headerCell" style={`grid-area: ${i + 2}/1`}>
-			<p class="headerText">{row.text}</p>
+			<p class="headerText">{row}</p>
 		</div>
 	{/each}
 </div>
