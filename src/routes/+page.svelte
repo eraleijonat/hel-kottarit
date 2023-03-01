@@ -63,6 +63,11 @@
 						name: 'variant',
 						type: 'string',
 						enum: ['light', 'dark', 'transparent']
+					},
+					{
+						name: 'width',
+						type: 'string',
+						enum: ['narrow', 'wide', 'full']
 					}
 				]
 			}

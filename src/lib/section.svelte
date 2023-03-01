@@ -8,7 +8,12 @@
 	class:sectionLight={variant === 'light'}
 	class:sectionDark={variant === 'dark'}
 >
-	<div class="gutter" class:gutterWide={width == 'wide'} class:gutterNarrow={width == 'narrow'}>
+	<div
+		class="gutter"
+		class:gutterWide={width == 'wide'}
+		class:gutterNarrow={width == 'narrow'}
+		class:gutterFull={width == 'full' || width == undefined}
+	>
 		<slot />
 	</div>
 </section>
@@ -31,6 +36,9 @@
 		@media (min-width: variables.$lg) {
 			max-width: variables.$lg;
 		}
+	}
+	.gutterFull {
+		max-width: 100%;
 	}
 	.section {
 		display: flex;
