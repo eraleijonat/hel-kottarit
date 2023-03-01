@@ -8,11 +8,7 @@
 	class:sectionLight={variant === 'light'}
 	class:sectionDark={variant === 'dark'}
 >
-	<div
-		class:gutterWide={width == 'wide'}
-		class:gutterNarrow={width == 'narrow'}
-		class:gutterFull={width == 'full' || width == undefined}
-	>
+	<div class="gutter" class:gutterWide={width == 'wide'} class:gutterNarrow={width == 'narrow'}>
 		<slot />
 	</div>
 </section>
@@ -20,6 +16,9 @@
 <style lang="scss">
 	@use '../src/style/_variables.scss';
 
+	.gutter {
+		max-width: 100%;
+	}
 	.gutterNarrow {
 		@media (min-width: variables.$md) {
 			max-width: variables.$md;
@@ -32,9 +31,6 @@
 		@media (min-width: variables.$lg) {
 			max-width: variables.$lg;
 		}
-	}
-	.gutterFull {
-		max-width: 100%;
 	}
 	.section {
 		display: flex;

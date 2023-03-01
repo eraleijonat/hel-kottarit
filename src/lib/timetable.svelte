@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { columns, rows } from './timetable';
+	import { columns, fullRows } from './timetable';
 </script>
 
 <div class="container">
@@ -9,9 +9,9 @@
 				<p>{column}</p>
 			</div>
 		{/each}
-		{#each rows as row, i}
+		{#each fullRows as row, i}
 			<div class="headerCell" style={`grid-area: ${i + 2}/1`}>
-				<p class="headerText">{row}</p>
+				<p class="headerText">{row.text}</p>
 			</div>
 		{/each}
 		<slot />
@@ -23,8 +23,7 @@
 	.container {
 		display: flex;
 		flex-direction: column;
-		max-width: 100%;
-		overflow-x: scroll;
+		overflow-x: auto;
 	}
 	.timeTable {
 		display: grid;
@@ -32,11 +31,11 @@
 		grid-template-rows: auto repeat(7, 1fr);
 		row-gap: 8px;
 		column-gap: 8px;
-
 		border-width: 1px;
 		border-radius: 4px;
 		border-style: solid;
-		padding-bottom: 16px;
+		min-width: 730px;
+		padding: 16px;
 		border-color: variables.$text-light;
 		color: variables.$text-light;
 	}

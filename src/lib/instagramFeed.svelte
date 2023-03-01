@@ -29,7 +29,15 @@
 						on:click={() => goto(post.permalink)}
 						on:keypress={() => goto(post.permalink)}
 					/>
-					<p class="caption">{post.caption}</p>
+					{#if post.caption.length > 250}
+						<p class="caption">
+							{post.caption.slice(0, 250) + '... '}<a href={post.permalink} target="_blank"
+								>lue lisää</a
+							>
+						</p>
+					{:else}
+						<p class="caption">{post.caption}</p>
+					{/if}
 				</div>
 			{/each}
 		{/await}
@@ -41,26 +49,17 @@
 	.container {
 		display: flex;
 		max-width: 100%;
-		max-height: 500px;
-
-		@media (min-width: variables.$md) {
-			max-height: 700px;
-		}
-
-		@media (min-width: variables.$lg) {
-			max-height: unset;
-		}
 	}
 	.posts {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		gap: 32px;
-		overflow: auto;
+		overflow-x: auto;
 		scroll-snap-type: x mandatory;
 
 		@media (min-width: variables.$lg) {
-			gap: 24;
+			gap: 24px;
 			flex-direction: row;
 			align-items: flex-start;
 
@@ -117,5 +116,6 @@
 	.caption {
 		margin: 0;
 		text-align: justify;
+		text-overflow: ellipsis;
 	}
 </style>

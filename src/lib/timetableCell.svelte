@@ -19,7 +19,6 @@
 		ages: '-',
 		name: 'Muu toiminta'
 	};
-	console.log({ text, column, day });
 </script>
 
 {#if column !== undefined && startRow !== undefined && endRow !== undefined}
