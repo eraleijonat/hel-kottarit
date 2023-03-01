@@ -42,7 +42,12 @@
 		display: flex;
 		max-width: 100%;
 		max-height: 500px;
+
 		@media (min-width: variables.$md) {
+			max-height: 700px;
+		}
+
+		@media (min-width: variables.$lg) {
 			max-height: unset;
 		}
 	}

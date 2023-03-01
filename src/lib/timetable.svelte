@@ -34,6 +34,7 @@
 		border-width: 1px;
 		border-radius: 4px;
 		border-style: solid;
+		padding-bottom: 16px;
 		border-color: variables.$text-light;
 		color: variables.$text-light;
 	}

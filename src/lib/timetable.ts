@@ -28,3 +28,5 @@ export const ageGroups = [
 	{ colors: '#6e470a', ages: '18-22', name: 'vaeltajat' },
 	{ colors: '#253764', ages: '23+', name: 'aikuiset' }
 ];
+
+export const splitValues = ['left', 'right', 'full'];

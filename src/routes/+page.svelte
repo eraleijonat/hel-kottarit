@@ -7,7 +7,7 @@
 	import Section from '$lib/section.svelte';
 	import Timetable from '$lib/timetable.svelte';
 	import TimetableCell from '$lib/timetableCell.svelte';
-	import { ageGroups, columns, rows } from '$lib/timetable';
+	import { ageGroups, columns, rows, splitValues } from '$lib/timetable';
 
 	export let data;
 	let heroHeight: number | undefined;
@@ -75,7 +75,8 @@
 					{ name: 'start', type: 'string', enum: rows },
 					{ name: 'end', type: 'string', enum: rows },
 					{ name: 'text', type: 'string' },
-					{ name: 'ageGroup', type: 'string', enum: ageGroups.map((a) => a.name) }
+					{ name: 'ageGroup', type: 'string', enum: ageGroups.map((a) => a.name) },
+					{ name: 'split', type: 'string', enum: splitValues }
 				],
 				noWrap: true
 			},

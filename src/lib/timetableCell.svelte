@@ -5,6 +5,7 @@
 	export let end: string | undefined;
 	export let text: string;
 	export let ageGroup: string | undefined;
+	export let split: string | undefined;
 
 	const dayColumn = day !== undefined && columns.indexOf(day) + 2;
 	const startRow = start && rows.indexOf(start) + 2;
@@ -21,6 +22,8 @@
 {#if dayColumn > 0 && startRow && endRow}
 	<div
 		class="cell"
+		class:cellLeft={split == 'left'}
+		class:cellRight={split == 'right'}
 		style={`grid-column: ${dayColumn}; grid-row: ${startRow} / ${endRow}; background-color: ${
 			ageGroupData !== undefined ? ageGroupData.colors : defaultAgeGroupData.colors
 		};`}
@@ -38,7 +41,14 @@
 		border-radius: 4px;
 		text-align: center;
 	}
-
+	.cellLeft {
+		align-self: flex-start;
+		max-width: 50%;
+	}
+	.cellRight {
+		align-self: flex-end;
+		max-width: 50%;
+	}
 	.cellText {
 		margin: 0px;
 	}
