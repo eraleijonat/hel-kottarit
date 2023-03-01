@@ -48,20 +48,22 @@
 						type: 'string',
 						defaultValue: ''
 					}
-				]
+				],
+				noWrap: true
 			},
 			{
 				component: InstagramFeed,
 				name: 'Instagram feed',
 				canHaveChildren: false,
+				noWrap: true,
 				builtIn: true
 			},
 			{
 				component: Timetable,
 				name: 'Timetable',
 				canHaveChildren: true,
-
-				builtIn: true
+				builtIn: true,
+				noWrap: true
 			},
 			{
 				component: TimetableCell,
@@ -73,7 +75,8 @@
 					{ name: 'start', type: 'string', enum: rows },
 					{ name: 'end', type: 'string', enum: rows },
 					{ name: 'text', type: 'string' }
-				]
+				],
+				noWrap: true
 			},
 			{
 				component: Section,
@@ -93,7 +96,8 @@
 						enum: ['narrow', 'wide', 'full'],
 						defaultValue: 'narrow'
 					}
-				]
+				],
+				noWrap: true
 			}
 		]}
 	/>
