@@ -6,6 +6,8 @@
 	import Head from '../lib/head.svelte';
 	import Section from '$lib/section.svelte';
 	import Timetable from '$lib/timetable.svelte';
+	import TimetableCell from '$lib/timetableCell.svelte';
+	import { columns, rows } from '$lib/timetable';
 
 	export let data;
 	let heroHeight: number | undefined;
@@ -59,6 +61,17 @@
 				name: 'Timetable',
 				canHaveChildren: false,
 				builtIn: true
+			},
+			{
+				component: TimetableCell,
+				name: 'Timetable cell',
+				canHaveChildren: false,
+				builtIn: true,
+				inputs: [
+					{ name: 'day', type: 'string', enum: columns },
+					{ name: 'start', type: 'string', enum: rows },
+					{ name: 'end', type: 'string', enum: rows }
+				]
 			},
 			{
 				component: Section,

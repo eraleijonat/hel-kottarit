@@ -1,45 +1,40 @@
 <script lang="ts">
+	import { columns, rows } from './timetable';
 </script>
 
-<table>
-	<thead>
-		<tr>
-			<th scope="col" />
-			<th scope="col">Maanantai</th>
-			<th scope="col">Tiistai</th>
-			<th scope="col">Keskiviikko</th>
-			<th scope="col">Torstai</th>
-			<th scope="col">Perjantai</th>
-			<th scope="col">Lauantai</th>
-			<th scope="col">Sunnuntai</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<th scope="row">17.00-17.30</th>
-		</tr>
-		<tr>
-			<th scope="row">17.30-18.00</th>
-		</tr>
-		<tr>
-			<th scope="row">18.00-18.30</th>
-		</tr>
-		<tr>
-			<th scope="row">18.30-19.00</th>
-		</tr>
-		<tr>
-			<th scope="row">19.00-19.30</th>
-		</tr>
-		<tr>
-			<th scope="row">19.30-20.00</th>
-		</tr>
-		<tr>
-			<th scope="row">20.00-20.30</th>
-		</tr>
-		<tr>
-			<th scope="row">20.30-21.00</th>
-		</tr>
-	</tbody>
-</table>
+<div class="timeTable">
+	{#each columns as column, i}
+		<div class="headerCell" style={`grid-area: 1/${i + 2}`}>
+			<p>{column}</p>
+		</div>
+	{/each}
+	{#each rows as row, i}
+		<div class="headerCell" style={`grid-area: ${i + 2}/1`}>
+			<p class="headerText">{row.text}</p>
+		</div>
+	{/each}
+</div>
 
-<style lang="scss"></style>
+<style lang="scss">
+	@use '../src/style/_variables.scss';
+	.timeTable {
+		display: grid;
+		grid-template-columns: 2fr repeat(7, 1fr);
+		grid-template-rows: auto;
+		row-gap: 8px;
+		column-gap: 8px;
+		border-width: 1px;
+		border-style: solid;
+		border-color: variables.$text-light;
+		color: variables.$text-light;
+	}
+	.headerCell {
+		font-weight: bold;
+		padding: 8px;
+		text-align: center;
+	}
+
+	.headerText {
+		margin: 0px;
+	}
+</style>
