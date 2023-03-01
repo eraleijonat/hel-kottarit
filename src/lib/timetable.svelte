@@ -10,7 +10,7 @@
 			</div>
 		{/each}
 		{#each rows as row, i}
-			<div class="headerCell" style={`grid-area: ${i * 2 + 2}/1`}>
+			<div class="headerCell" style={`grid-area: ${i + 2}/1`}>
 				<p class="headerText">{row}</p>
 			</div>
 		{/each}
@@ -22,15 +22,17 @@
 	@use '../src/style/_variables.scss';
 	.container {
 		display: flex;
+		flex-direction: column;
 		max-width: 100%;
+		overflow-x: scroll;
 	}
 	.timeTable {
 		display: grid;
 		grid-template-columns: auto repeat(10, 1fr);
-		grid-template-rows: auto;
+		grid-template-rows: auto repeat(7, 1fr);
 		row-gap: 8px;
 		column-gap: 8px;
-		overflow: scroll;
+
 		border-width: 1px;
 		border-radius: 4px;
 		border-style: solid;

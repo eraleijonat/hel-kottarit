@@ -8,20 +8,21 @@
 	export let split: string | undefined;
 
 	const column =
-		day !== undefined && columns.indexOf(day) > 0 ? columns.indexOf(day) * 2 + 2 : undefined;
+		day !== undefined && columns.indexOf(day) > -1 ? columns.indexOf(day) * 2 + 2 : undefined;
 	const startOffset = split === 'right' ? 1 : 0;
 	const endOffset = split === 'left' ? 1 : 2;
-	const startRow = start && rows.indexOf(start) + 2;
-	const endRow = end && rows.indexOf(end) + 3;
+	const startRow = start && rows.indexOf(start) > -1 ? rows.indexOf(start) + 2 : undefined;
+	const endRow = end && rows.indexOf(end) > -1 ? rows.indexOf(end) + 3 : undefined;
 	const ageGroupData = ageGroups.find((a) => a.name === ageGroup);
 	const defaultAgeGroupData = {
 		colors: '#8f95a6',
 		ages: '-',
 		name: 'Muu toiminta'
 	};
+	console.log({ text, column, day });
 </script>
 
-{#if column && startRow && endRow}
+{#if column !== undefined && startRow !== undefined && endRow !== undefined}
 	<div
 		class="cell"
 		style={`
