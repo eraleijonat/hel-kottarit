@@ -15,6 +15,7 @@
 		ages: '-',
 		name: 'Muu toiminta'
 	};
+	console.log(ageGroup);
 </script>
 
 {#if dayColumn > 0 && startRow && endRow}
