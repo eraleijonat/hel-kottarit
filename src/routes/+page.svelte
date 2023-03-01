@@ -1,13 +1,6 @@
 <script lang="ts">
-	import InstagramFeed from '$lib/instagramFeed.svelte';
-	import NavigateButton from '$lib//NavigateButton.svelte';
-	import { RenderContent } from '@builder.io/sdk-svelte';
-	import { BUILDER_PUBLIC_API_KEY } from '../lib/renderContent';
 	import Head from '../lib/head.svelte';
-	import Section from '$lib/section.svelte';
-	import Timetable from '$lib/timetable.svelte';
-	import TimetableCell from '$lib/timetableCell.svelte';
-	import { ageGroups, columns, rows, splitValues } from '$lib/timetable';
+	import BuilderContent from '$lib/builder/builderContent.svelte';
 
 	export let data;
 	let heroHeight: number | undefined;
@@ -27,88 +20,13 @@
 	</div>
 </div>
 <div class="content">
-	<RenderContent
-		model="page"
-		content={data.content}
-		apiKey={BUILDER_PUBLIC_API_KEY}
-		customComponents={[
-			{
-				component: NavigateButton,
-				name: 'Navigate button',
-				canHaveChildren: false,
-				builtIn: true,
-				inputs: [
-					{
-						name: 'href',
-						type: 'string',
-						defaultValue: ''
-					},
-					{
-						name: 'text',
-						type: 'string',
-						defaultValue: ''
-					}
-				],
-				noWrap: true
-			},
-			{
-				component: InstagramFeed,
-				name: 'Instagram feed',
-				canHaveChildren: false,
-				noWrap: true,
-				builtIn: true
-			},
-			{
-				component: Timetable,
-				name: 'Timetable',
-				canHaveChildren: true,
-				builtIn: true,
-				noWrap: true
-			},
-			{
-				component: TimetableCell,
-				name: 'Timetable cell',
-				canHaveChildren: false,
-				builtIn: true,
-				inputs: [
-					{ name: 'day', type: 'string', enum: columns },
-					{ name: 'start', type: 'string', enum: rows },
-					{ name: 'end', type: 'string', enum: rows },
-					{ name: 'text', type: 'string' },
-					{ name: 'ageGroup', type: 'string', enum: ageGroups.map((a) => a.name) },
-					{ name: 'split', type: 'string', enum: splitValues }
-				],
-				noWrap: true
-			},
-			{
-				component: Section,
-				name: 'Section',
-				canHaveChildren: true,
-				builtIn: true,
-				inputs: [
-					{
-						name: 'variant',
-						type: 'string',
-						enum: ['light', 'dark', 'transparent'],
-						defaultValue: 'transparent'
-					},
-					{
-						name: 'width',
-						type: 'string',
-						enum: ['narrow', 'wide', 'full'],
-						defaultValue: 'narrow'
-					}
-				],
-				noWrap: true
-			}
-		]}
-	/>
+	<BuilderContent content={data.content} />
 </div>
 
 <style lang="scss">
 	@use '../src/style/_variables.scss';
 	.heroWrapper {
-		background: rgba(18, 18, 18, 1);
+		background: variables.$main-extra-dark;
 	}
 	.hero {
 		height: 600px;
@@ -169,12 +87,7 @@
 		}
 	}
 	.content {
-		background: linear-gradient(
-			180deg,
-			rgba(18, 18, 18, 1) 0%,
-			rgba(15, 21, 18, 1) 50%,
-			rgba(23, 23, 23, 1) 100%
-		);
+		background: variables.$main-extra-dark;
 		color: variables.$text-light;
 	}
 </style>

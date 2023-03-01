@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { columns, fullRows } from './timetable';
+	import type { BuilderProps } from './types';
+	export let attributes: BuilderProps;
+
+	console.log(attributes);
 </script>
 
 <div class="container">

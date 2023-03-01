@@ -1,5 +1,5 @@
 import { getContent } from '@builder.io/sdk-svelte';
-import { BUILDER_PUBLIC_API_KEY } from '../../lib/renderContent';
+import { BUILDER_PUBLIC_API_KEY } from '../../lib/builder/renderContent';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {

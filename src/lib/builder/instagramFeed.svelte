@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { BUILDER_PUBLIC_API_KEY } from './renderContent';
 
 	export async function load() {
@@ -12,6 +13,8 @@
 	}
 
 	const postsPromise = load();
+
+	const igLink = 'https://www.instagram.com/eraleijonat/';
 </script>
 
 <div class="container">
@@ -29,18 +32,21 @@
 						on:click={() => goto(post.permalink)}
 						on:keypress={() => goto(post.permalink)}
 					/>
-					{#if post.caption.length > 250}
-						<p class="caption">
-							{post.caption.slice(0, 250) + '... '}<a href={post.permalink} target="_blank"
-								>lue lisää</a
-							>
-						</p>
-					{:else}
-						<p class="caption">{post.caption}</p>
-					{/if}
+
+					<p class="caption">
+						{post.caption.slice(0, 250) + '... '}<a
+							href={post.permalink}
+							target="_blank"
+							rel="noreferrer">lue lisää</a
+						>
+					</p>
 				</div>
 			{/each}
 		{/await}
+	</div>
+	<div class="instagramLink" on:click={() => goto(igLink)} on:keypress={() => goto(igLink)}>
+		<img width="24px" height="24px" src={`${base}/instagram-logo.svg`} alt="Instagram logo" />
+		<a href={igLink}>Seuraa meitä instagramissa</a>
 	</div>
 </div>
 
@@ -48,18 +54,19 @@
 	@use '../src/style/_variables.scss';
 	.container {
 		display: flex;
+		flex-direction: column;
 		max-width: 100%;
 	}
 	.posts {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 32px;
+		gap: 24px;
+		padding-bottom: 8px;
 		overflow-x: auto;
 		scroll-snap-type: x mandatory;
 
 		@media (min-width: variables.$lg) {
-			gap: 24px;
 			flex-direction: row;
 			align-items: flex-start;
 
@@ -75,9 +82,11 @@
 		display: none;
 		flex-direction: column;
 		align-items: stretch;
-		padding: 8px;
 		gap: 16px;
+		border-radius: 8px;
 		scroll-snap-align: start;
+		background-color: variables.$main-extra-light;
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 
 		@media (min-width: variables.$md) {
 			flex-direction: row;
@@ -94,28 +103,42 @@
 		&:nth-child(-n + 6) {
 			display: flex;
 		}
-
-		&:target,
-		&:active {
-			background-color: rgba(255, 255, 255, 0.05);
-		}
 	}
 	.pic {
 		width: 100%;
 		cursor: pointer;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
 
 		@media (min-width: variables.$md) {
 			width: 300px;
 		}
 
 		@media (min-width: variables.$lg) {
-			height: 375px;
-			width: auto;
+			width: 400px;
+			height: 300px;
+			object-fit: cover;
 		}
 	}
 	.caption {
 		margin: 0;
+		padding: 16px;
 		text-align: justify;
 		text-overflow: ellipsis;
+	}
+	.instagramLink {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		align-self: center;
+		margin-top: 8px;
+		padding: 4px;
+		gap: 16px;
+		cursor: pointer;
+
+		@media (min-width: variables.$md) {
+			flex-direction: row;
+		}
 	}
 </style>
