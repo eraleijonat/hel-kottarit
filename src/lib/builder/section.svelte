@@ -16,8 +16,25 @@
 <style lang="scss">
 	@use '../src/style/_variables.scss';
 
+	.section {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		max-width: 100%;
+		padding: 64px 20px;
+	}
+	.sectionLight {
+		background-color: variables.$main-light;
+		color: variables.$text-dark;
+	}
+	.sectionDark {
+		background-color: variables.$main-dark;
+		color: variables.$text-light;
+	}
 	.gutter {
 		max-width: 100%;
+		width: 100%;
 	}
 	.gutterNarrow {
 		@media (min-width: variables.$md) {
@@ -31,19 +48,5 @@
 		@media (min-width: variables.$lg) {
 			max-width: variables.$lg;
 		}
-	}
-	.section {
-		display: flex;
-		justify-content: center;
-		max-width: 100%;
-		padding: 64px 20px;
-	}
-	.sectionLight {
-		background-color: variables.$main-light;
-		color: variables.$text-dark;
-	}
-	.sectionDark {
-		background-color: variables.$main-dark;
-		color: variables.$text-light;
 	}
 </style>

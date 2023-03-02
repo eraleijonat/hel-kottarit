@@ -47,7 +47,7 @@
 	}
 	.timeTableDark {
 		border-color: variables.$text-light;
-		color: vTimetableVariantight;
+		color: variables.$text-light;
 	}
 
 	.headerCell {
