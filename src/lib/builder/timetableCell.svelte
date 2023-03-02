@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { columns, rows, ageGroups } from './timetable';
+	import type { BuilderProps } from './types';
+
+	let attributes: BuilderProps;
+
 	export let day: string | undefined;
 	export let start: string | undefined;
 	export let end: string | undefined;
@@ -23,6 +27,7 @@
 
 {#if column !== undefined && startRow !== undefined && endRow !== undefined}
 	<div
+		{...attributes}
 		class="cell"
 		style={`
 		grid-column: ${column + startOffset} / ${column + endOffset};

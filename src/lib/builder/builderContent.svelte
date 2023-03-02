@@ -6,7 +6,7 @@
 	import Section from '$lib/builder/section.svelte';
 	import Timetable from '$lib/builder/timetable.svelte';
 	import TimetableCell from '$lib/builder/timetableCell.svelte';
-	import { ageGroups, columns, rows, splitValues } from '$lib/builder/timetable';
+	import { ageGroups, columns, rows, splitValues, timeTabtimetableVariant '$lib/builder/timetable';
 
 	export let content;
 </script>
@@ -47,6 +47,14 @@
 			name: 'Timetable',
 			canHaveChildren: true,
 			builtIn: true,
+			inputs: [
+				{
+					name: 'variant',
+					type: 'string',
+					enum: timeTableVariant,
+					defaultValue: timeTableVariant[0]
+				}
+			],
 			noWrap: true
 		},
 		{
@@ -55,8 +63,8 @@
 			canHaveChildren: false,
 			builtIn: true,
 			inputs: [
-				{ name: 'day', type: 'string', enum: columns },
-				{ name: 'start', type: 'string', enum: rows },
+				{ name: 'day', type: 'stringtimetableVariant },
+				{ name: 'startimetableVariantg', enum: rows },
 				{ name: 'end', type: 'string', enum: rows },
 				{ name: 'text', type: 'string' },
 				{ name: 'ageGroup', type: 'string', enum: ageGroups.map((a) => a.name) },

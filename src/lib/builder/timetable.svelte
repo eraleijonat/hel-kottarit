@@ -1,13 +1,15 @@
 <script lang="ts">
 	import { columns, fullRows } from './timetable';
+	import type { TimetableVariant } from './timetable';
 	import type { BuilderProps } from './types';
-	export let attributes: BuilderProps;
 
-	console.log(attributes);
+	let attributes: BuilderProps;
+
+	export let variant: TimetableVariant;
 </script>
 
-<div class="container">
-	<div class="timeTable">
+<div {...attributes} class="container">
+	<div class="timeTable" class:timeTableDark={variant === 'dark'}>
 		{#each columns as column, i}
 			<div class="headerCell" style={`grid-column: ${i * 2 + 2} / ${i * 2 + 4}`}>
 				<p>{column}</p>
@@ -40,9 +42,14 @@
 		border-style: solid;
 		min-width: 730px;
 		padding: 16px;
-		border-color: variables.$text-light;
-		color: variables.$text-light;
+		border-color: variables.$text-dark;
+		color: variables.$text-dark;
 	}
+	.timeTableDark {
+		border-color: variables.$text-light;
+		color: vTimetableVariantight;
+	}
+
 	.headerCell {
 		font-weight: bold;
 		padding: 8px 16px;

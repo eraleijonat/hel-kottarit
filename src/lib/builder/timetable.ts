@@ -1,3 +1,6 @@
+export type TimetableVariant = 'light' | 'dark' | undefined;
+export const timetableVariant = ['light', 'dark'];
+
 export const columns = [
 	'Maanantai',
 	'Tiistai',
