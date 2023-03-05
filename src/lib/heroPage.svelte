@@ -7,26 +7,27 @@
 	const shortHeroHeight = 400;
 	let screenHeight: number | undefined;
 	let heroImageHeight: number | undefined =
-		content.data.heroHeight === 'short' ? shortHeroHeight : screenHeight;
+		content.data?.heroHeight === 'short' ? shortHeroHeight : screenHeight;
 </script>
 
-<Head image={`${content.data.heroImage}?width=1200`} />
+<Head image={`${content.data?.heroImage}?width=1200`} />
 
 <svelte:window bind:outerHeight={screenHeight} />
-
-<div class="heroWrapper">
-	<div
-		class="hero"
-		class:heroDark={content.data.variant === 'dark'}
-		style="--heroImage: url({content.data.heroImage}); --heroHeight: {heroImageHeight}px;"
-	>
-		<h1 class="heroTitle">{content.data.heroTitle ?? ''}</h1>
-		{#if content.data.heroText}<p class="heroText">{content.data.heroText}</p>{/if}
+{#if content.data}
+	<div class="heroWrapper">
+		<div
+			class="hero"
+			class:heroDark={content.data.variant === 'dark'}
+			style="--heroImage: url({content.data.heroImage}); --heroHeight: {heroImageHeight}px;"
+		>
+			<h1 class="heroTitle">{content.data.heroTitle ?? ''}</h1>
+			{#if content.data.heroText}<p class="heroText">{content.data.heroText}</p>{/if}
+		</div>
 	</div>
-</div>
-<div class="content" class:contentDark={content.data.variant === 'dark'}>
-	<BuilderContent {content} />
-</div>
+	<div class="content" class:contentDark={content.data.variant === 'dark'}>
+		<BuilderContent {content} />
+	</div>
+{/if}
 
 <style lang="scss">
 	@use '../src/style/_variables.scss';

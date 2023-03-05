@@ -27,7 +27,7 @@ export type Content = {
 };
 
 export type HeroPageContent = {
-	data: {
+	data?: {
 		heroImage?: string;
 		description?: string;
 		heroText?: string;
@@ -37,3 +37,5 @@ export type HeroPageContent = {
 	};
 } & Content &
 	BuilderContent;
+
+export type HeroPageData = { content: HeroPageContent | null };
