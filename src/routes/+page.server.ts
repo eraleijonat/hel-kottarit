@@ -2,7 +2,7 @@ import { BUILDER_PUBLIC_API_KEY } from '$lib/builder/renderContent';
 import { getContent } from '@builder.io/sdk-svelte';
 import type { BuilderContent } from '@builder.io/sdk-svelte/package/types/builder-content';
 
-export async function load({ request, params, url }): Promise<{
+export async function load(): Promise<{
 	content: BuilderContent | null;
 }> {
 	// fetch your Builder content
@@ -11,7 +11,7 @@ export async function load({ request, params, url }): Promise<{
 		apiKey: BUILDER_PUBLIC_API_KEY,
 		options: undefined,
 		userAttributes: {
-			urlPath: url.pathname
+			urlPath: '/'
 		}
 	});
 	return { content };
