@@ -17,5 +17,4 @@ export async function load({ request, params, url }): Promise<{
 	return { content };
 }
 
-//export const prerender = true;
-//export const ssr = true;
+export const prerender = true;
