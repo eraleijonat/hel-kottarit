@@ -22,7 +22,7 @@
 			<img src="{base}/wagggs.png" alt="suomen partiolaiset" />
 			<img src="{base}/wosm.png" alt="suomen partiolaiset" />
 		</div>
-		<p class="linkText">Helsingin Erä-Leijonat ry (1084910-4)</p>
+		<p>Helsingin Erä-Leijonat ry (1084910-4)</p>
 	</div>
 </footer>
 
@@ -79,7 +79,12 @@
 		color: variables.$text-light;
 		text-align: center;
 		text-decoration: none;
-		padding: 8px 0;
+		padding: 8px 2px 4px;
+		border-bottom: 1px solid transparent;
+
+		&:hover {
+			border-color: variables.$text-light;
+		}
 	}
 	.logos {
 		display: flex;

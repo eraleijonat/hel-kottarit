@@ -21,6 +21,7 @@
 	:global(h1) {
 		font-size: variables.$font-size-2;
 		margin: 24px;
+		hyphens: none;
 
 		@media (min-width: variables.$sm) {
 			font-size: variables.$font-size-1;
@@ -38,6 +39,8 @@
 	:global(h2) {
 		font-size: variables.$font-size-3;
 		margin: 18px 0;
+		hyphens: none;
+
 		@media (min-width: variables.$md) {
 			font-size: variables.$font-size-2;
 			margin: 24px 0;
@@ -49,6 +52,8 @@
 	}
 	:global(h3) {
 		font-size: variables.$font-size-3;
+		hyphens: none;
+
 		@media (min-width: variables.$md) {
 			font-size: variables.$font-size-2;
 		}
@@ -71,6 +76,7 @@
 		font-family: variables.$font-primary;
 		font-size: 18px;
 		line-height: 1.5rem !important;
+		hyphens: auto;
 	}
 	main {
 		margin-top: variables.$header-offset;

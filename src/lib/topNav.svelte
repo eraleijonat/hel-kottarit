@@ -94,11 +94,8 @@
 		background-color: variables.$main;
 		box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
 
-		@media (min-width: variables.$sm) {
-			gap: 32px;
-		}
 		@media (min-width: variables.$xl) {
-			padding: 0 80px;
+			padding: 0 40px;
 		}
 	}
 	.links {
@@ -188,6 +185,7 @@
 		font-size: large;
 		font-family: variables.$font-primary;
 		text-decoration: none;
+		hyphens: none;
 		transition: color 0.2s;
 
 		&:hover {

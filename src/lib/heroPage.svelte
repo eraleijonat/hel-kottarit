@@ -16,7 +16,7 @@
 		class:heroDark={content.data.variant === 'dark'}
 		style="--heroImage: url({content.data.heroImage}); --heroHeight: {heroHeight}px;"
 	>
-		<h1 class="heroTitle">{content.data.heroTitle}</h1>
+		<h1 class="heroTitle">{content.data.heroTitle ?? ''}</h1>
 		{#if content.data.heroText}<p class="heroText">{content.data.heroText}</p>{/if}
 	</div>
 </div>
