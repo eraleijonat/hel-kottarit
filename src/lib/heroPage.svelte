@@ -4,17 +4,21 @@
 	import type { HeroPageContent } from './builder/types';
 
 	export let content: HeroPageContent;
-
-	let heroHeight: number | undefined;
+	const shortHeroHeight = 400;
+	let screenHeight: number | undefined;
+	let heroImageHeight: number | undefined =
+		content.data.heroHeight === 'short' ? shortHeroHeight : screenHeight;
 </script>
 
 <Head image={`${content.data.heroImage}?width=1200`} />
+
+<svelte:window bind:outerHeight={screenHeight} />
 
 <div class="heroWrapper">
 	<div
 		class="hero"
 		class:heroDark={content.data.variant === 'dark'}
-		style="--heroImage: url({content.data.heroImage}); --heroHeight: {heroHeight}px;"
+		style="--heroImage: url({content.data.heroImage}); --heroHeight: {heroImageHeight}px;"
 	>
 		<h1 class="heroTitle">{content.data.heroTitle ?? ''}</h1>
 		{#if content.data.heroText}<p class="heroText">{content.data.heroText}</p>{/if}
@@ -30,8 +34,6 @@
 		background: variables.$secondary-extra-dark;
 	}
 	.hero {
-		height: 600px;
-		padding: 0 20px;
 		background-size: cover;
 		background-image: var(--heroImage);
 		background-color: rgba(255, 255, 255, 0.9);
@@ -51,17 +53,11 @@
 			rgba(255, 255, 255, 0.2) 92%,
 			transparent
 		);
-
 		background-position: 20%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
-		@media (min-width: variables.$sm) {
-			height: 900px;
-			padding: 0px;
-		}
 	}
 	.heroDark {
 		background-color: rgba(0, 0, 0, 0.1);

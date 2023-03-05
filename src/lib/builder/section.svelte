@@ -4,8 +4,6 @@
 	export let variant: 'light' | 'dark' | 'transparent';
 	export let width: 'narrow' | 'wide' | 'full';
 	export let attributes: BuilderAttributes;
-
-	console.log(attributes);
 </script>
 
 <section
