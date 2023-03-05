@@ -18,4 +18,4 @@ export async function load({ request, params, url }): Promise<{
 }
 
 export const prerender = true;
-export const ssr = true;
+// export const ssr = true;

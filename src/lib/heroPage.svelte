@@ -6,8 +6,6 @@
 	export let content: HeroPageContent;
 	const shortHeroHeight = 400;
 	let screenHeight: number | undefined;
-	let heroImageHeight: number | undefined =
-		content.data?.heroHeight === 'short' ? shortHeroHeight : screenHeight;
 </script>
 
 <Head image={`${content.data?.heroImage}?width=1200`} />
@@ -18,7 +16,10 @@
 		<div
 			class="hero"
 			class:heroDark={content.data.variant === 'dark'}
-			style="--heroImage: url({content.data.heroImage}); --heroHeight: {heroImageHeight}px;"
+			style="--heroImage: url({content.data.heroImage}); --heroHeight: {content.data.heroHeight ===
+			'short'
+				? shortHeroHeight
+				: screenHeight}px;"
 		>
 			<h1 class="heroTitle">{content.data.heroTitle ?? ''}</h1>
 			{#if content.data.heroText}<p class="heroText">{content.data.heroText}</p>{/if}
