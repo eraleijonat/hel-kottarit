@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { columns, rows, ageGroups } from './timetable';
-	import type { BuilderProps } from './types';
+	import type { BuilderAttributes } from './types';
 
-	let attributes: BuilderProps;
-
+	export let attributes: BuilderAttributes;
 	export let day: string | undefined;
 	export let start: string | undefined;
 	export let end: string | undefined;

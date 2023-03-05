@@ -1,9 +1,15 @@
 <script lang="ts">
+	import type { BuilderAttributes } from './types';
+
 	export let variant: 'light' | 'dark' | 'transparent';
 	export let width: 'narrow' | 'wide' | 'full';
+	export let attributes: BuilderAttributes;
+
+	console.log(attributes);
 </script>
 
 <section
+	{...attributes}
 	class="section"
 	class:sectionLight={variant === 'light'}
 	class:sectionDark={variant === 'dark'}

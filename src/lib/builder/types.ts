@@ -1,19 +1,15 @@
-export type BuilderProps = {
-	'builder-id': string;
-	style: string | undefined;
-	class: string;
+import type { BuilderContent } from '@builder.io/sdk-svelte/package/types/builder-content';
+
+export type BuilderAttributes = {
+	style?: string;
+	class?: string;
 };
 
-export type Data = {
+export type Content = {
 	previewUrl: string;
 	createdDate: number;
 	query: object[][];
 
-	lastUpdated: number;
-	modelId: string;
-	published: 'published' | string;
-	id: string;
-	variations: object;
 	testRatio: number;
 	lastUpdatedBy: string;
 	folders: [];
@@ -23,29 +19,20 @@ export type Data = {
 		hasLinks: boolean;
 		kind: string;
 		componentsUsed: object[];
-		breakpoints: object[];
 		needsHydration: boolean;
 	};
-	name: string;
+
 	createdBy: string;
 	rev: string;
 };
 
-export type HeroPageData = {
-	content: {
-		data: {
-			heroImage?: string;
-			themeId: boolean;
-			title: string;
-			inputs: [];
-			// jsCode: string;
-			description?: string;
-			heroText?: string;
-			variant: 'light' | 'dark';
-			heroTitle?: string;
-			blocks: [];
-			url: string;
-			state: [];
-		} & Data;
+export type HeroPageContent = {
+	data: {
+		heroImage?: string;
+		description?: string;
+		heroText?: string;
+		variant: 'light' | 'dark';
+		heroTitle?: string;
 	};
-};
+} & Content &
+	BuilderContent;

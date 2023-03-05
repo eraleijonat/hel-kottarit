@@ -2,6 +2,9 @@
 	import { goto } from '$app/navigation';
 	import { base } from '$app/paths';
 	import { BUILDER_PUBLIC_API_KEY } from './renderContent';
+	import type { BuilderAttributes } from './types';
+
+	export let attributes: BuilderAttributes;
 
 	export async function load() {
 		const res = await fetch(
@@ -17,7 +20,7 @@
 	const igLink = 'https://www.instagram.com/eraleijonat/';
 </script>
 
-<div class="container">
+<div {...attributes} class="container">
 	<div class="posts">
 		{#await postsPromise}
 			<p>...ladataan IG kuvia</p>

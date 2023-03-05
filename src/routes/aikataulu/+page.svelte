@@ -1,7 +1,8 @@
 <script lang="ts">
-	import type { HeroPageData } from '$lib/builder/types';
+	import type { HeroPageContent } from '$lib/builder/types';
 	import HeroPage from '$lib/heroPage.svelte';
-	export let data: HeroPageData;
+
+	export let data: { content: HeroPageContent };
 </script>
 
-<HeroPage {data} />
+<HeroPage content={data.content} />

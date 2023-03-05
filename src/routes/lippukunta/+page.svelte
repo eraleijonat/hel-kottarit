@@ -1,8 +1,8 @@
 <script lang="ts">
-	import BuilderContent from '$lib/builder/builderContent.svelte';
-	export let data;
+	import type { HeroPageContent } from '$lib/builder/types';
+	import HeroPage from '$lib/heroPage.svelte';
+
+	export let data: { content: HeroPageContent };
 </script>
 
-<main>
-	<BuilderContent content={data.content} />
-</main>
+<HeroPage content={data.content} />

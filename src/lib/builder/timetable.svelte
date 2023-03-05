@@ -1,10 +1,9 @@
 <script lang="ts">
 	import { columns, fullRows } from './timetable';
 	import type { TimetableVariant } from './timetable';
-	import type { BuilderProps } from './types';
+	import type { BuilderAttributes } from './types';
 
-	let attributes: BuilderProps;
-
+	export let attributes: BuilderAttributes;
 	export let variant: TimetableVariant;
 </script>
 

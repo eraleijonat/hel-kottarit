@@ -12,6 +12,5 @@ export async function load() {
 			urlPath: '/aikataulu'
 		}
 	});
-
 	return { content };
 }

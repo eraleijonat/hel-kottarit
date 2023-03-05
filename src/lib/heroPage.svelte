@@ -1,26 +1,27 @@
 <script lang="ts">
 	import Head from '../lib/head.svelte';
 	import BuilderContent from '$lib/builder/builderContent.svelte';
-	import type { HeroPageData } from './builder/types';
+	import type { HeroPageContent } from './builder/types';
 
-	export let data: HeroPageData;
+	export let content: HeroPageContent;
+
 	let heroHeight: number | undefined;
 </script>
 
-<Head image={`${data.content.data.heroImage}?width=1200`} />
+<Head image={`${content.data.heroImage}?width=1200`} />
 
 <div class="heroWrapper">
 	<div
 		class="hero"
-		class:heroDark={data.content.data.variant === 'dark'}
-		style="--heroImage: url({data.content.data.heroImage}); --heroHeight: {heroHeight}px;"
+		class:heroDark={content.data.variant === 'dark'}
+		style="--heroImage: url({content.data.heroImage}); --heroHeight: {heroHeight}px;"
 	>
-		<h1 class="heroTitle">{data.content.data.heroTitle}</h1>
-		{#if data.content.data.heroText}<p class="heroText">{data.content.data.heroText}</p>{/if}
+		<h1 class="heroTitle">{content.data.heroTitle}</h1>
+		{#if content.data.heroText}<p class="heroText">{content.data.heroText}</p>{/if}
 	</div>
 </div>
 <div class="content">
-	<BuilderContent content={data.content} />
+	<BuilderContent {content} />
 </div>
 
 <style lang="scss">

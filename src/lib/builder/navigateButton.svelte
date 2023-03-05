@@ -1,12 +1,15 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { base } from '$app/paths';
+	import type { BuilderAttributes } from './types';
 
+	export let attributes: BuilderAttributes;
 	export let href = '';
 	export let text = '';
 </script>
 
 <div
+	{...attributes}
 	class="navigateButton"
 	on:click={() => {
 		goto(`${base}${href}`);

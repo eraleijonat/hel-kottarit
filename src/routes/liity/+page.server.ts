@@ -1,5 +1,5 @@
-import { BUILDER_PUBLIC_API_KEY } from '$lib/builder/renderContent';
 import { getContent } from '@builder.io/sdk-svelte';
+import { BUILDER_PUBLIC_API_KEY } from '../../lib/builder/renderContent';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
@@ -9,8 +9,9 @@ export async function load() {
 		apiKey: BUILDER_PUBLIC_API_KEY,
 		options: undefined,
 		userAttributes: {
-			urlPath: '/'
+			urlPath: '/johtajille'
 		}
 	});
+
 	return { content };
 }

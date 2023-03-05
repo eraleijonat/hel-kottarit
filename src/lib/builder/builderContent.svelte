@@ -8,7 +8,9 @@
 	import TimetableCell from '$lib/builder/timetableCell.svelte';
 	import { ageGroups, columns, rows, splitValues, timetableVariant } from '$lib/builder/timetable';
 
-	export let content;
+	import type { HeroPageContent } from './types';
+
+	export let content: HeroPageContent;
 </script>
 
 <RenderContent
