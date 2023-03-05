@@ -24,7 +24,7 @@
 		{#if content.data.heroText}<p class="heroText">{content.data.heroText}</p>{/if}
 	</div>
 </div>
-<div class="content">
+<div class="content" class:contentDark={content.data.variant === 'dark'}>
 	<BuilderContent {content} />
 </div>
 
@@ -79,6 +79,10 @@
 		}
 	}
 	.content {
+		background: #fff;
+		color: variables.$text-dark;
+	}
+	.contentDark {
 		background: variables.$secondary-extra-dark;
 		color: variables.$text-light;
 	}
