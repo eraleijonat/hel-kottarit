@@ -3,17 +3,12 @@
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { clickOutside } from './clickOutside';
+	import { pageLinks } from './logic';
 
 	$: path = $page.url.pathname;
 	let menuOpen = false;
-	const links = [
-		{ name: 'Etusivu', path: '/' },
-		{ name: 'Lippukunta', path: '/lippukunta' },
-		{ name: 'Ryhmät ja tapahtumat', path: '/aikataulu' },
-		{ name: 'Yhteystiedot', path: '/johtajille' },
-		{ name: 'Huoltajille', path: '/huoltajille' },
-		{ name: 'Johtajille', path: '/yhteystiedot' }
-	];
+
+	const links = pageLinks.filter((pl) => pl.visibleOnNav);
 
 	function handleClickOutside(event) {
 		menuOpen = false;

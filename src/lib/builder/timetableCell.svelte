@@ -39,15 +39,17 @@
 {/if}
 
 <style lang="scss">
+	@use '../src/style/_variables.scss';
+
 	.cell {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-
 		border-radius: 4px;
 		text-align: center;
 	}
 	.cellText {
+		color: variables.$text-light;
 		padding: 12px 8px;
 		margin: 0px;
 	}
