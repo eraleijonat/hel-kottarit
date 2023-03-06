@@ -10,37 +10,45 @@
 
 <Head image={`${content.data?.heroImage}?width=1200`} />
 
-<svelte:window bind:outerHeight={screenHeight} />
-{#if content.data}
-	<div class="heroWrapper">
+<svelte:window bind:innerHeight={screenHeight} />
+<div class:wrapperDark={content.data?.variant === 'dark'}>
+	{#if content.data}
 		<div
 			class="hero"
+			class:heroFull={content.data.heroHeight === 'full'}
 			class:heroDark={content.data.variant === 'dark'}
 			style="--heroImage: url({content.data.heroImage}); --heroHeight: {content.data.heroHeight ===
 			'short'
 				? shortHeroHeight
-				: screenHeight}px;"
+				: screenHeight}px; --heroImagePosition: {content.data.heroImagePosition}"
 		>
 			<h1 class="heroTitle">{content.data.heroTitle ?? ''}</h1>
 			{#if content.data.heroText}<p class="heroText">{content.data.heroText}</p>{/if}
 		</div>
-	</div>
-	<div class="content" class:contentDark={content.data.variant === 'dark'}>
 		<BuilderContent {content} />
-	</div>
-{/if}
+	{/if}
+</div>
 
 <style lang="scss">
 	@use '../src/style/_variables.scss';
-	.heroWrapper {
+	.wrapperDark {
 		background: variables.$secondary-extra-dark;
+		color: variables.$text-light;
 	}
 	.hero {
+		align-items: center;
 		background-size: cover;
 		background-image: var(--heroImage);
-		background-color: rgba(255, 255, 255, 0.9);
-		height: calc(var(--heroHeight) - 72px);
+		background-color: rgba(0, 0, 0, 0.4);
 		background-blend-mode: multiply;
+		background-position: --heroImagePosition;
+		display: flex;
+		flex-direction: column;
+		height: calc(var(--heroHeight) - 72px);
+		justify-content: center;
+	}
+	.heroFull {
+		background-color: #fff;
 		mask-image: linear-gradient(
 			to bottom,
 			#fff 0px,
@@ -55,15 +63,8 @@
 			rgba(255, 255, 255, 0.2) 92%,
 			transparent
 		);
-		background-position: 20%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
 	}
-	.heroDark {
-		background-color: rgba(0, 0, 0, 0.1);
-	}
+
 	.heroTitle {
 		color: #fff;
 		font-weight: 600;
@@ -79,13 +80,5 @@
 			font-size: variables.$font-size-3;
 			letter-spacing: 0.2rem;
 		}
-	}
-	.content {
-		background: #fff;
-		color: variables.$text-dark;
-	}
-	.contentDark {
-		background: variables.$secondary-extra-dark;
-		color: variables.$text-light;
 	}
 </style>

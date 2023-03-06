@@ -3,7 +3,7 @@ export const pageLinks = [
 	{ visibleOnNav: true, name: 'Lippukunta', path: '/lippukunta' },
 	{ visibleOnNav: true, name: 'Toiminta', path: '/aikataulu' },
 	{ visibleOnNav: true, name: 'Liity', path: '/liity' },
-	{ visibleOnNav: true, name: 'Yhteystiedot', path: '/johtajille' },
+	{ visibleOnNav: true, name: 'Yhteystiedot', path: '/yhteystiedot' },
 	{ visibleOnNav: true, name: 'Huoltajille', path: '/huoltajille' },
-	{ visibleOnNav: false, name: 'Johtajille', path: '/yhteystiedot' }
+	{ visibleOnNav: false, name: 'Johtajille', path: '/johtajille' }
 ];

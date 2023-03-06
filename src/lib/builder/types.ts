@@ -31,7 +31,8 @@ export type HeroPageContent = {
 		heroImage?: string;
 		description?: string;
 		heroText?: string;
-		heroHeight: 'short' | 'long';
+		heroHeight: 'short' | 'full';
+		heroImagePosition: 'top' | 'center' | 'bottom';
 		variant: 'light' | 'dark';
 		heroTitle?: string;
 	};
