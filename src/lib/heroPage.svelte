@@ -41,7 +41,7 @@
 		background-image: var(--heroImage);
 		background-color: rgba(0, 0, 0, 0.4);
 		background-blend-mode: multiply;
-		background-position: --heroImagePosition;
+		background-position: var(--heroImagePosition);
 		display: flex;
 		flex-direction: column;
 		height: calc(var(--heroHeight) - 72px);
