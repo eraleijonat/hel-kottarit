@@ -5,7 +5,7 @@
 
 	export let content: HeroPageContent;
 	const shortHeroHeight = 400;
-	let screenHeight: number | undefined;
+	let screenHeight: number = shortHeroHeight;
 </script>
 
 <Head image={`${content.data?.heroImage}?width=1200`} />
@@ -15,15 +15,17 @@
 	{#if content.data}
 		<div
 			class="hero"
-			class:heroFull={content.data.heroHeight === 'full'}
-			class:heroDark={content.data.variant === 'dark'}
+			class:heroFade={content.data.heroHeight === 'full' || content.data.variant === 'dark'}
+			class:heroTint={content.data.heroHeight === 'short'}
 			style="--heroImage: url({content.data.heroImage}); --heroHeight: {content.data.heroHeight ===
 			'short'
 				? shortHeroHeight
-				: screenHeight}px; --heroImagePosition: {content.data.heroImagePosition}"
+				: screenHeight - 72}px; --heroImagePosition: {content.data.heroImagePosition}"
 		>
 			<h1 class="heroTitle">{content.data.heroTitle ?? ''}</h1>
-			{#if content.data.heroText}<p class="heroText">{content.data.heroText}</p>{/if}
+			{#if content.data.heroText}<p class="heroText">
+					{content.data.heroText}
+				</p>{/if}
 		</div>
 		<BuilderContent {content} />
 	{/if}
@@ -39,15 +41,17 @@
 		align-items: center;
 		background-size: cover;
 		background-image: var(--heroImage);
-		background-color: rgba(0, 0, 0, 0.4);
 		background-blend-mode: multiply;
 		background-position: var(--heroImagePosition);
 		display: flex;
 		flex-direction: column;
-		height: calc(var(--heroHeight) - 72px);
+		height: var(--heroHeight);
 		justify-content: center;
 	}
-	.heroFull {
+	.heroTint {
+		background-color: rgba(0, 0, 0, 0.4);
+	}
+	.heroFade {
 		background-color: #fff;
 		mask-image: linear-gradient(
 			to bottom,
@@ -64,7 +68,6 @@
 			transparent
 		);
 	}
-
 	.heroTitle {
 		color: #fff;
 		font-weight: 600;
@@ -72,9 +75,9 @@
 	}
 	.heroText {
 		padding: 12px 32px;
-		background-color: rgba(0, 0, 0, 0.4);
 		border-radius: 8px;
 		color: #fff;
+		background-color: rgba(0, 0, 0, 0.4);
 
 		@media (min-width: variables.$sm) {
 			font-size: variables.$font-size-3;
