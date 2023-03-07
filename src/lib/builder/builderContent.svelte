@@ -9,6 +9,7 @@
 	import { ageGroups, columns, rows, splitValues, timetableVariant } from '$lib/builder/timetable';
 
 	import type { HeroPageContent } from './types';
+	import Calendar from './calendar.svelte';
 
 	export let content: HeroPageContent;
 </script>
@@ -18,6 +19,27 @@
 	{content}
 	apiKey={BUILDER_PUBLIC_API_KEY}
 	customComponents={[
+		{
+			component: Section,
+			name: 'Section',
+			canHaveChildren: true,
+			builtIn: true,
+			inputs: [
+				{
+					name: 'variant',
+					type: 'string',
+					enum: ['light', 'dark', 'transparent'],
+					defaultValue: 'transparent'
+				},
+				{
+					name: 'width',
+					type: 'string',
+					enum: ['narrow', 'wide', 'full'],
+					defaultValue: 'narrow'
+				}
+			],
+			noWrap: true
+		},
 		{
 			component: NavigateButton,
 			name: 'Navigate button',
@@ -74,26 +96,6 @@
 			],
 			noWrap: true
 		},
-		{
-			component: Section,
-			name: 'Section',
-			canHaveChildren: true,
-			builtIn: true,
-			inputs: [
-				{
-					name: 'variant',
-					type: 'string',
-					enum: ['light', 'dark', 'transparent'],
-					defaultValue: 'transparent'
-				},
-				{
-					name: 'width',
-					type: 'string',
-					enum: ['narrow', 'wide', 'full'],
-					defaultValue: 'narrow'
-				}
-			],
-			noWrap: true
-		}
+		{ component: Calendar, name: 'Calendar', canHaveChildren: false, builtIn: true, noWrap: true }
 	]}
 />

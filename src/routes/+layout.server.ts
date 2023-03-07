@@ -1,8 +1,16 @@
 import { BUILDER_PUBLIC_API_KEY } from '$lib/builder/renderContent';
 import { getContent } from '@builder.io/sdk-svelte';
 import type { BuilderContent } from '@builder.io/sdk-svelte/package/types/builder-content';
-
-export async function load({ request, params, url }): Promise<{
+// generate types for load function
+export async function load({
+	request,
+	params,
+	url
+}: {
+	request: Request;
+	params: Record<string, string>;
+	url: URL;
+}): Promise<{
 	content: BuilderContent | null;
 }> {
 	// fetch your Builder content
