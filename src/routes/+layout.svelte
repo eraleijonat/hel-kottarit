@@ -80,6 +80,7 @@
 	}
 	main {
 		margin-top: variables.$header-offset;
+		margin-bottom: 100px;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
