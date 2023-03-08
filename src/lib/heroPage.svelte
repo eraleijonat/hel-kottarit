@@ -8,7 +8,11 @@
 	let screenHeight: number = shortHeroHeight;
 </script>
 
-<Head image={`${content.data?.heroImage}?width=1200`} />
+<Head
+	title={content.data?.title}
+	description={content.data?.description}
+	image={`${content.data?.heroImage}?width=1200`}
+/>
 
 <svelte:window bind:innerHeight={screenHeight} />
 <div class:wrapperDark={content.data?.variant === 'dark'}>

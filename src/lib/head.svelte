@@ -2,9 +2,15 @@
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 
-	export let title = 'Helsingin Erä-Leijonat';
-	export let image = `${base}/logo/hel-logo.png`;
-	export let description =
+	export let title: string | undefined;
+	export let description: string | undefined;
+	export let image: string | undefined;
+
+	const pageName = 'Helsingin Erä-Leijonat';
+	const computedTitle = title && title !== pageName ? `${title} | ${pageName}` : pageName;
+	const computedImage = image || `${base}/logo/hel-logo.png`;
+	const computedDescription =
+		description ||
 		'Helsingin Erä-Leijonat on vuonna 1993 perustettu Pukinmäkiläinen partiolippukunta';
 </script>
 
@@ -13,21 +19,21 @@
 	<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
 	<link rel="icon" type="image/png" href={`${base}/favicon.png`} />
 	<!-- HTML Meta Tags -->
-	<title>Helsingin Erä-Leijonat</title>
-	<meta name="description" content={description} />
+	<title>{computedTitle}</title>
+	<meta name="description" content={computedDescription} />
 
 	<!-- Facebook Meta Tags -->
 	<meta property="og:url" content={$page.url.pathname} />
 	<meta property="og:type" content="website" />
-	<meta property="og:title" content={title} />
-	<meta property="og:description" content={description} />
-	<meta property="og:image" content={image} />
+	<meta property="og:title" content={computedTitle} />
+	<meta property="og:description" content={computedDescription} />
+	<meta property="og:image" content={computedImage} />
 
 	<!-- Twitter Meta Tags -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="twitter:domain" content="eraleijonat.fi" />
 	<meta property="twitter:url" content={$page.url.pathname} />
-	<meta name="twitter:title" content={title} />
-	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content={image} />
+	<meta name="twitter:title" content={computedTitle} />
+	<meta name="twitter:description" content={computedDescription} />
+	<meta name="twitter:image" content={computedImage} />
 </svelte:head>
