@@ -28,11 +28,11 @@
 			margin: 28px;
 		}
 		@media (min-width: variables.$md) {
-			font-size: 60px;
+			font-size: variables.$font-size-0;
 			margin: 36px;
 		}
 		@media (min-width: variables.$lg) {
-			font-size: variables.$font-size-0;
+			font-size: 64px;
 			margin: 52px 0;
 		}
 	}
@@ -75,7 +75,7 @@
 		align-items: stretch;
 		font-family: variables.$font-primary;
 		font-size: 18px;
-		line-height: 1.5rem !important;
+
 		hyphens: auto;
 	}
 	main {

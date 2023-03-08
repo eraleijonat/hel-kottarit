@@ -4,8 +4,6 @@
 	import type { HeroPageContent } from './builder/types';
 
 	export let content: HeroPageContent;
-	const shortHeroHeight = 400;
-	let screenHeight: number = shortHeroHeight;
 </script>
 
 <Head
@@ -14,17 +12,16 @@
 	image={`${content.data?.heroImage}?width=1200`}
 />
 
-<svelte:window bind:innerHeight={screenHeight} />
 <div class:wrapperDark={content.data?.variant === 'dark'}>
 	{#if content.data}
 		<div
 			class="hero"
 			class:heroFade={content.data.heroHeight === 'full' || content.data.variant === 'dark'}
 			class:heroTint={content.data.heroHeight === 'short'}
-			style="--heroImage: url({content.data.heroImage}); --heroHeight: {content.data.heroHeight ===
-			'short'
-				? shortHeroHeight
-				: screenHeight - 72}px; --heroImagePosition: {content.data.heroImagePosition}"
+			class:heroShort={content.data.heroHeight === 'short'}
+			class:heroFull={content.data.heroHeight === 'full'}
+			style="--heroImage: url({content.data.heroImage}); --heroImagePosition: {content.data
+				.heroImagePosition}"
 		>
 			<h1 class="heroTitle">{content.data.heroTitle ?? ''}</h1>
 			{#if content.data.heroText}<p class="heroText">
@@ -49,8 +46,22 @@
 		background-position: var(--heroImagePosition);
 		display: flex;
 		flex-direction: column;
-		height: var(--heroHeight);
+
 		justify-content: center;
+	}
+	.heroShort {
+		height: 200px;
+
+		@media (min-width: variables.$sm) {
+			height: 300px;
+		}
+
+		@media (min-width: variables.$lg) {
+			height: 400px;
+		}
+	}
+	.heroFull {
+		height: calc(100vh - variables.$header-offset);
 	}
 	.heroTint {
 		background-color: rgba(0, 0, 0, 0.4);
