@@ -14,6 +14,9 @@
 <style lang="scss">
 	@use '../src/style/reset.scss';
 	@use '../src/style/_variables.scss';
+
+	@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@400;700&family=Ropa+Sans&display=swap');
+
 	:global(h1, h2, h3, h4, h5, h6) {
 		font-family: variables.$font-primary-header;
 		font-weight: normal;

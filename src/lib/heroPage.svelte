@@ -46,7 +46,7 @@
 		background-position: var(--heroImagePosition);
 		display: flex;
 		flex-direction: column;
-
+		background-color: rgba(0, 0, 0, 0.15);
 		justify-content: center;
 	}
 	.heroShort {
@@ -67,7 +67,6 @@
 		background-color: rgba(0, 0, 0, 0.4);
 	}
 	.heroFade {
-		background-color: #fff;
 		mask-image: linear-gradient(
 			to bottom,
 			#fff 0px,
