@@ -30,12 +30,12 @@
 		box-shadow: none;
 		border-radius: 100px;
 		padding: 16px 24px;
-		background-color: variables.$secondary-dark;
+		background-color: variables.$main;
 		transition: background-color 0.1s;
 		cursor: pointer;
 
 		&:hover {
-			background-color: variables.$secondary;
+			background-color: lighten(variables.$main, 2%);
 			a {
 				color: #fff;
 			}

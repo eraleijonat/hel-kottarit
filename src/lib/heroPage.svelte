@@ -12,7 +12,10 @@
 	image={`${content.data?.heroImage}?width=1200`}
 />
 
-<div class:wrapperDark={content.data?.variant === 'dark'}>
+<div
+	class:wrapperDark={content.data?.variant === 'dark'}
+	class:wrapperLight={content.data?.variant === 'light'}
+>
 	{#if content.data}
 		<div
 			class="hero"
@@ -35,8 +38,12 @@
 <style lang="scss">
 	@use '../src/style/_variables.scss';
 	.wrapperDark {
-		background: variables.$secondary-extra-dark;
+		background-color: variables.$secondary-extra-dark;
 		color: variables.$text-light;
+	}
+	.wrapperLight {
+		background-color: variables.$main-extra-light;
+		color: variables.$text-dark;
 	}
 	.hero {
 		align-items: center;

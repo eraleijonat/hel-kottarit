@@ -29,7 +29,7 @@
 		padding: 64px 20px;
 	}
 	.sectionLight {
-		background-color: variables.$main-light;
+		background-color: variables.$secondary-extra-light;
 		color: variables.$text-dark;
 	}
 	.sectionDark {

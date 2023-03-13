@@ -41,7 +41,7 @@
 		padding: 48px 18px 24px;
 		background-color: variables.$main-dark;
 
-		box-shadow: inset 0 10px 15px -5px rgba(0, 0, 0, 0.5);
+		box-shadow: inset 0 10px 10px -5px rgba(0, 0, 0, 0.2);
 
 		@media (min-width: variables.$md) {
 			justify-content: space-evenly;
