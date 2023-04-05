@@ -26,7 +26,7 @@
 		justify-content: flex-start;
 		align-items: center;
 		max-width: 100%;
-		padding: 64px 20px;
+		padding: 32px 20px 16px;
 	}
 	.sectionLight {
 		background-color: variables.$secondary-extra-light;
