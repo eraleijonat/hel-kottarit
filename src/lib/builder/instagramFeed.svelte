@@ -129,6 +129,7 @@
 		text-align: justify;
 		text-overflow: ellipsis;
 		font-size: variables.$font-size-6;
+		color: variables.$text-dark;
 		line-height: 1.5em;
 	}
 	.instagramLink {
