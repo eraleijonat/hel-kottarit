@@ -128,6 +128,8 @@
 		padding: 16px;
 		text-align: justify;
 		text-overflow: ellipsis;
+		font-size: variables.$font-size-6;
+		line-height: 1.5em;
 	}
 	.instagramLink {
 		display: flex;

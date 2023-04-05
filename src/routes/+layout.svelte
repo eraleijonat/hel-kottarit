@@ -77,17 +77,16 @@
 		flex-direction: column;
 		align-items: stretch;
 		font-family: variables.$font-primary;
-		font-size: 18px;
+		font-size: variables.$font-size-5;
 
 		hyphens: auto;
 	}
 	main {
-		margin-top: variables.$header-offset;
-		padding-sbottom: 100px;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
 		align-items: stretch;
+		margin-top: variables.$header-offset;
 		max-width: 100%;
 	}
 </style>
