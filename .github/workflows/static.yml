@@ -14,7 +14,7 @@ on:
 
 # Set enviroment variables
 env:
-  SITE_URL: 'eraleijonat.fi'
+  SITE_URL: 'https://www.eraleijonat.fi'
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
