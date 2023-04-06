@@ -11,7 +11,7 @@ export async function load(): Promise<{
 		apiKey: BUILDER_PUBLIC_API_KEY,
 		options: undefined,
 		userAttributes: {
-			urlPath: '/aikataulu'
+			urlPath: '/toiminta'
 		}
 	});
 	return { content };
