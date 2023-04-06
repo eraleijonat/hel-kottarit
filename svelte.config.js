@@ -7,7 +7,6 @@ const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
-
 	kit: {
 		adapter: adapter({
 			// default options are shown. On some platforms
@@ -18,6 +17,12 @@ const config = {
 			precompress: true,
 			strict: true
 		})
+	},
+	onwarn: (warning, handler) => {
+		const { code, filename } = warning;
+		// supress warning global css unused selector
+		if (code === 'css-unused-selector' && filename === '/src/routes/+layout.svelte') return;
+		handler(warning);
 	}
 };
 
