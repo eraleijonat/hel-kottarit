@@ -7,6 +7,9 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+	interface HTMLAttributes<T> {
+		'on:click_outside'?: CompositionEventHandler<T>;
+	}
 }
 
 export {};

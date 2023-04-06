@@ -10,7 +10,7 @@
 
 	const links = pageLinks.filter((pl) => pl.visibleOnNav);
 
-	function handleClickOutside(event) {
+	function handleClickOutside(event: MouseEvent) {
 		menuOpen = false;
 	}
 </script>
