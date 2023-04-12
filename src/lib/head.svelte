@@ -36,9 +36,4 @@
 	<meta name="twitter:title" content={computedTitle} />
 	<meta name="twitter:description" content={computedDescription} />
 	<meta name="twitter:image" content={computedImage} />
-
-	<!-- Google / Search Engine Tags -->
-	{#if $page.url.pathname === '/'}
-		<meta name="google-site-verification" content="wIP_kzxyzePMxqisNSwGCalb5EWgnoFWFQB-3ivz8Ec" />
-	{/if}
 </svelte:head>
