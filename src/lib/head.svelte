@@ -16,8 +16,11 @@
 
 <svelte:head>
 	<!-- favicon -->
-	<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+	<link rel="icon" type="image/svg+xml" href={`${base}/favicon-dark.svg`} media="(prefers-color-scheme: dark)" />
+	<link rel="icon" type="image/svg+xml" href={`${base}/favicon-light.svg`} media="(prefers-color-scheme: light)" />
 	<link rel="icon" type="image/png" href={`${base}/favicon.png`} />
+	<link rel="icon" type="image/png" href={`${base}/favicon.ico`} />
+
 	<!-- HTML Meta Tags -->
 	<title>{computedTitle}</title>
 	<meta name="description" content={computedDescription} />
