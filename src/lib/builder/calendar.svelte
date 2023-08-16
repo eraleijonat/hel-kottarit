@@ -13,7 +13,7 @@
 	<iframe
 		bind:clientWidth={width}
 		title="Helsingin Erä-Leijonat - Kalenteri"
-		src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23{calendarBackground}&ctz=Europe%2FHelsinki&src=dWY2aDVmcW5zYWYyZm5yczZ0cnM0OTA2cmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%233F51B5"
+		src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%23{calendarBackground}&ctz=Europe%2FHelsinki&src=dWY2aDVmcW5zYWYyZm5yczZ0cnM0OTA2cmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%233F51B5"
 		width="100%"
 		{height}
 		frameborder="0"
