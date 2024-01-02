@@ -17,6 +17,10 @@
 
 	@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+	:global(html) {
+		scroll-padding-top: 70px; /* height of sticky header */
+	}
+
 	:global(h1, h2, h3, h4, h5, h6) {
 		font-family: variables.$font-primary-header;
 		font-weight: normal;
@@ -78,7 +82,6 @@
 		align-items: stretch;
 		font-family: variables.$font-primary;
 		font-size: variables.$font-size-5;
-
 		hyphens: auto;
 	}
 	main {

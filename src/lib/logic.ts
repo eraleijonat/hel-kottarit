@@ -7,3 +7,5 @@ export const pageLinks = [
 	{ visibleOnNav: true, name: 'Huoltajille', path: '/huoltajille' },
 	{ visibleOnNav: false, name: 'Johtajille', path: '/johtajille' }
 ];
+
+export const applicationAnchorLink = '/liity#hakemus';

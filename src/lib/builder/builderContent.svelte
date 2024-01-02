@@ -10,7 +10,7 @@
 
 	import type { HeroPageContent } from './types';
 	import Calendar from './calendar.svelte';
-	import { pageLinks } from '$lib/logic';
+	import { applicationAnchorLink, pageLinks } from '$lib/logic';
 
 	export let content: HeroPageContent;
 </script>
@@ -50,7 +50,7 @@
 				{
 					name: 'href',
 					type: 'string',
-					enum: pageLinks.map((p) => p.path)
+					enum: [...pageLinks.map((p) => p.path), applicationAnchorLink]
 				},
 				{
 					name: 'text',
