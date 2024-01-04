@@ -2,7 +2,7 @@
 
 [![Build and deploy to github pages](https://github.com/eraleijonat/hel-kottarit/actions/workflows/static.yml/badge.svg)](https://github.com/eraleijonat/hel-kottarit/actions/workflows/static.yml)
 
-Helsingin Erä-Leijonien kotisivut. Staatilinen sivusto, joka on toteutettu [Svelte kit](https://kit.svelte.dev/) -frameworkilla. Sivuston sisältö on hallittavissa [Builder.io](https://builder.io/) -CMS:llä.
+Helsingin Erä-Leijonien kotisivut. Staattinen sivusto, joka on toteutettu [Svelte kit](https://kit.svelte.dev/) -frameworkilla. Sivuston sisältö on hallittavissa [Builder.io](https://builder.io/) -CMS:llä.
 
 ## Technologies
 
